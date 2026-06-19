@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560">
+  <rect width="900" height="560" fill="#fff7e4"/>
+  <path d="M0 360c170-90 280 70 440-25 160-96 255-215 460-125v350H0z" fill="#138a43" opacity=".16"/>
+  <circle cx="210" cy="210" r="86" fill="#ff8f00" opacity=".9"/>
+  <rect x="340" y="145" width="360" height="46" rx="23" fill="#071f3d"/>
+  <rect x="340" y="220" width="280" height="34" rx="17" fill="#d7a84b"/>
+  <rect x="340" y="285" width="330" height="34" rx="17" fill="#138a43"/>
+  <text x="70" y="490" font-family="Poppins, Arial" font-size="40" font-weight="800" fill="#071f3d">Blood Donation Camp</text>
+</svg>

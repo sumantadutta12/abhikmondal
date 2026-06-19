@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560">
+  <rect width="900" height="560" fill="#eef8f2"/>
+  <path d="M0 105h900v110H0z" fill="#ff8f00" opacity=".9"/>
+  <path d="M0 345h900v110H0z" fill="#138a43" opacity=".9"/>
+  <circle cx="705" cy="280" r="145" fill="#ffffff" opacity=".55"/>
+  <path d="M190 350l88-160 88 160z" fill="#071f3d"/>
+  <rect x="390" y="185" width="260" height="64" rx="32" fill="#ffffff"/>
+  <rect x="390" y="282" width="340" height="42" rx="21" fill="#ffffff" opacity=".9"/>
+  <text x="70" y="500" font-family="Poppins, Arial" font-size="40" font-weight="800" fill="#071f3d">Cleanliness Drive</text>
+</svg>

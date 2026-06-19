@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560">
+  <rect width="900" height="560" fill="#f8fafc"/>
+  <rect x="0" y="0" width="900" height="560" fill="#071f3d"/>
+  <path d="M70 85h760v390H70z" fill="#ffffff" opacity=".08"/>
+  <circle cx="450" cy="280" r="135" fill="#d7a84b" opacity=".26"/>
+  <path d="M275 270h350v65H275z" fill="#ff8f00"/>
+  <path d="M315 205h270v65H315z" fill="#ffffff"/>
+  <path d="M335 335h230v65H335z" fill="#138a43"/>
+  <text x="450" y="500" text-anchor="middle" font-family="Poppins, Arial" font-size="40" font-weight="800" fill="#ffffff">Youth Awareness</text>
+</svg>
