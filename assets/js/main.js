@@ -49,6 +49,29 @@
       "hero.role": "Yuva Morcha President, Asansol",
       "hero.tagline": "Youth Power, Nation First",
       "hero.desc": "A youth-focused leadership platform for public service, social awareness, and strong grassroots organization.",
+      "hero.slide2.title": "Serving People On The Ground",
+      "hero.slide2.subtitle": "Social work, awareness, and community support",
+      "hero.slide2.tagline": "Listen. Act. Deliver.",
+      "hero.slide2.desc": "Working closely with citizens for cleanliness drives, blood donation camps, and help for needy families.",
+      "hero.slide2.primary": "View Social Work",
+      "hero.slide2.secondary": "Open Gallery",
+      "hero.slide3.title": "Building A Strong Youth Network",
+      "hero.slide3.subtitle": "Organization strength from booth to community",
+      "hero.slide3.tagline": "Empower. Organize. Lead.",
+      "hero.slide3.desc": "Creating opportunities for young people to participate in leadership, service, and development-focused action.",
+      "hero.slide3.primary": "Vision & Mission",
+      "hero.slide3.secondary": "Latest Events",
+      "hero.slide4.title": "Development With Responsibility",
+      "hero.slide4.subtitle": "Clean society, aware citizens, stronger Asansol",
+      "hero.slide4.tagline": "Service Before Self",
+      "hero.slide4.desc": "A disciplined public mission for civic responsibility, education awareness, and development-oriented teamwork.",
+      "hero.slide4.primary": "About Abhik",
+      "hero.slide4.secondary": "Contact Team",
+      "hero.slide5.title": "Join With The Movement",
+      "hero.slide5.subtitle": "Volunteer, participate, and share public issues",
+      "hero.slide5.tagline": "Together For Asansol",
+      "hero.slide5.desc": "Connect with the team for social initiatives, public programs, youth campaigns, and community service.",
+      "hero.slide5.secondary": "News Updates",
       "cta.join": "Join With Us",
       "cta.activities": "View Activities",
       "cta.readMore": "Read More",
@@ -178,6 +201,11 @@
     bn: "Bangla",
     hi: "Hindi"
   };
+  const languageShortLabels = {
+    en: "EN",
+    bn: "BN",
+    hi: "HI"
+  };
 
   const cleanTranslations = {
     bn: {
@@ -194,6 +222,29 @@
       "hero.role": "যুব মোর্চা সভাপতি, আসানসোল",
       "hero.tagline": "যুব শক্তি, দেশ আগে",
       "hero.desc": "জনসেবা, সামাজিক সচেতনতা এবং শক্তিশালী তৃণমূল সংগঠনের জন্য যুব-কেন্দ্রিক নেতৃত্বের প্ল্যাটফর্ম।",
+      "hero.slide2.title": "মাটির মানুষের পাশে সেবা",
+      "hero.slide2.subtitle": "সামাজিক কাজ, সচেতনতা এবং কমিউনিটি সাপোর্ট",
+      "hero.slide2.tagline": "শুনুন। কাজ করুন। পৌঁছে দিন।",
+      "hero.slide2.desc": "পরিচ্ছন্নতা অভিযান, রক্তদান শিবির এবং অসহায় পরিবারের সহায়তায় নাগরিকদের সঙ্গে সরাসরি কাজ।",
+      "hero.slide2.primary": "সামাজিক কাজ দেখুন",
+      "hero.slide2.secondary": "গ্যালারি খুলুন",
+      "hero.slide3.title": "শক্তিশালী যুব নেটওয়ার্ক গড়ে তোলা",
+      "hero.slide3.subtitle": "বুথ থেকে কমিউনিটি পর্যন্ত সংগঠনের শক্তি",
+      "hero.slide3.tagline": "ক্ষমতায়ন। সংগঠন। নেতৃত্ব।",
+      "hero.slide3.desc": "যুব সমাজকে নেতৃত্ব, সেবা এবং উন্নয়নমুখী কাজে অংশগ্রহণের সুযোগ তৈরি করা।",
+      "hero.slide3.primary": "ভিশন ও মিশন",
+      "hero.slide3.secondary": "সাম্প্রতিক ইভেন্ট",
+      "hero.slide4.title": "দায়িত্বের সঙ্গে উন্নয়ন",
+      "hero.slide4.subtitle": "পরিচ্ছন্ন সমাজ, সচেতন নাগরিক, শক্তিশালী আসানসোল",
+      "hero.slide4.tagline": "নিজের আগে সেবা",
+      "hero.slide4.desc": "নাগরিক দায়িত্ব, শিক্ষা সচেতনতা এবং উন্নয়নমুখী দলগত কাজের জন্য শৃঙ্খলাবদ্ধ জনমিশন।",
+      "hero.slide4.primary": "অভিক সম্পর্কে",
+      "hero.slide4.secondary": "টিমের সঙ্গে যোগাযোগ",
+      "hero.slide5.title": "আন্দোলনের সঙ্গে যুক্ত হন",
+      "hero.slide5.subtitle": "স্বেচ্ছাসেবক হোন, অংশ নিন এবং জনসমস্যা জানান",
+      "hero.slide5.tagline": "আসানসোলের জন্য একসঙ্গে",
+      "hero.slide5.desc": "সামাজিক উদ্যোগ, জন-প্রোগ্রাম, যুব প্রচার এবং কমিউনিটি সেবার জন্য টিমের সঙ্গে যুক্ত হন।",
+      "hero.slide5.secondary": "খবর আপডেট",
       "cta.join": "আমাদের সঙ্গে যোগ দিন",
       "cta.activities": "কার্যক্রম দেখুন",
       "cta.readMore": "আরও পড়ুন",
@@ -230,6 +281,29 @@
       "hero.role": "युवा मोर्चा अध्यक्ष, आसनसोल",
       "hero.tagline": "युवा शक्ति, राष्ट्र पहले",
       "hero.desc": "जनसेवा, सामाजिक जागरूकता और मजबूत जमीनी संगठन के लिए युवा-केंद्रित नेतृत्व मंच।",
+      "hero.slide2.title": "जमीन पर लोगों की सेवा",
+      "hero.slide2.subtitle": "सामाजिक कार्य, जागरूकता और सामुदायिक सहयोग",
+      "hero.slide2.tagline": "सुनें। काम करें। पहुंचाएं।",
+      "hero.slide2.desc": "स्वच्छता अभियान, रक्तदान शिविर और जरूरतमंद परिवारों की मदद के लिए नागरिकों के साथ मिलकर काम।",
+      "hero.slide2.primary": "सामाजिक कार्य देखें",
+      "hero.slide2.secondary": "गैलरी खोलें",
+      "hero.slide3.title": "मजबूत युवा नेटवर्क का निर्माण",
+      "hero.slide3.subtitle": "बूथ से समुदाय तक संगठन की शक्ति",
+      "hero.slide3.tagline": "सशक्त करें। संगठित करें। नेतृत्व करें।",
+      "hero.slide3.desc": "युवाओं को नेतृत्व, सेवा और विकास-केंद्रित कार्यों में भाग लेने के अवसर देना।",
+      "hero.slide3.primary": "विजन और मिशन",
+      "hero.slide3.secondary": "नवीनतम इवेंट",
+      "hero.slide4.title": "जिम्मेदारी के साथ विकास",
+      "hero.slide4.subtitle": "स्वच्छ समाज, जागरूक नागरिक, मजबूत आसनसोल",
+      "hero.slide4.tagline": "स्वयं से पहले सेवा",
+      "hero.slide4.desc": "नागरिक जिम्मेदारी, शिक्षा जागरूकता और विकासमुखी टीमवर्क के लिए अनुशासित जनमिशन।",
+      "hero.slide4.primary": "अभिक के बारे में",
+      "hero.slide4.secondary": "टीम से संपर्क करें",
+      "hero.slide5.title": "आंदोलन से जुड़ें",
+      "hero.slide5.subtitle": "स्वयंसेवक बनें, भाग लें और जनसमस्याएं साझा करें",
+      "hero.slide5.tagline": "आसनसोल के लिए साथ मिलकर",
+      "hero.slide5.desc": "सामाजिक पहल, जन कार्यक्रम, युवा अभियान और सामुदायिक सेवा के लिए टीम से जुड़ें।",
+      "hero.slide5.secondary": "खबर अपडेट",
       "cta.join": "हमसे जुड़ें",
       "cta.activities": "गतिविधियां देखें",
       "cta.readMore": "और पढ़ें",
@@ -584,7 +658,10 @@
       }
     });
     $("#languageSelect").val(lang);
-    $(".language-current span").text(languageLabels[lang] || languageLabels.en);
+    const label = window.matchMedia("(max-width: 575.98px)").matches
+      ? (languageShortLabels[lang] || languageShortLabels.en)
+      : (languageLabels[lang] || languageLabels.en);
+    $(".language-current span").text(label);
     $(".language-option").each(function () {
       const isActive = $(this).data("lang") === lang;
       $(this).toggleClass("active", isActive).attr("aria-selected", isActive ? "true" : "false");
@@ -625,10 +702,29 @@
   if ($(".language-switcher").length) {
     collectOriginalTextNodes();
     applyLanguage(localStorage.getItem("siteLang") || "en");
+    $(window).on("resize", function () {
+      const label = window.matchMedia("(max-width: 575.98px)").matches
+        ? (languageShortLabels[currentLang] || languageShortLabels.en)
+        : (languageLabels[currentLang] || languageLabels.en);
+      $(".language-current span").text(label);
+    });
   }
 
   const mobileNavbar = $("#mainNavbar");
   if (mobileNavbar.length) {
+    if (!mobileNavbar.find(".navbar-drawer-social").length) {
+      mobileNavbar.append(
+        '<div class="navbar-drawer-social" aria-label="Social links">' +
+          '<span>Follow Us</span>' +
+          '<div>' +
+            '<a href="https://www.facebook.com/prince.abhik.58" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>' +
+            '<a href="javascript:void(0)" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>' +
+            '<a href="javascript:void(0)" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>' +
+          '</div>' +
+        '</div>'
+      );
+    }
+
     mobileNavbar.on("show.bs.collapse", function () {
       $(this).removeClass("drawer-closing");
       $("body").addClass("nav-drawer-open");

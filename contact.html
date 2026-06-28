@@ -1,4 +1,19 @@
-﻿<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Contact | Abhik Kumar Mondal</title><link rel="icon" type="image/webp" href="assets/images/logo-111.webp"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"><link href="assets/css/style.css" rel="stylesheet"></head><body>    <nav class="navbar navbar-expand-lg fixed-top site-navbar">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Abhik Kumar Mondal</title>
+  <link rel="icon" type="image/webp" href="assets/images/logo-111.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top site-navbar">
     <div class="container">
       <a class="navbar-brand brand-switch d-flex align-items-center gap-2" href="index.html">
         <span class="brand-mark">
@@ -11,22 +26,22 @@
         </span>
       </a>
       <div class="language-switcher ms-lg-3">
-  <label class="visually-hidden" for="languageSelect">Select Language</label>
-  <select id="languageSelect" class="language-native" aria-label="Select Language" tabindex="-1">
-    <option value="en">English</option>
-    <option value="bn">Bangla</option>
-    <option value="hi">Hindi</option>
-  </select>
-  <button class="language-current" type="button" aria-haspopup="listbox" aria-expanded="false">
-    <i class="fa-solid fa-globe"></i>
-    <span>English</span>
-    <i class="fa-solid fa-chevron-down"></i>
-  </button>
-  <div class="language-options" role="listbox" aria-label="Select Language">
-    <button type="button" class="language-option active" data-lang="en" role="option" aria-selected="true">English</button>
-    <button type="button" class="language-option" data-lang="bn" role="option" aria-selected="false">Bangla</button>
-    <button type="button" class="language-option" data-lang="hi" role="option" aria-selected="false">Hindi</button>
-  </div>
+        <label class="visually-hidden" for="languageSelect">Select Language</label>
+        <select id="languageSelect" class="language-native" aria-label="Select Language" tabindex="-1">
+          <option value="en">English</option>
+          <option value="bn">Bangla</option>
+          <option value="hi">Hindi</option>
+        </select>
+        <button class="language-current" type="button" aria-haspopup="listbox" aria-expanded="false">
+          <i class="fa-solid fa-globe"></i>
+          <span>English</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="language-options" role="listbox" aria-label="Select Language">
+          <button type="button" class="language-option active" data-lang="en" role="option" aria-selected="true">English</button>
+          <button type="button" class="language-option" data-lang="bn" role="option" aria-selected="false">Bangla</button>
+          <button type="button" class="language-option" data-lang="hi" role="option" aria-selected="false">Hindi</button>
+        </div>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -42,7 +57,110 @@
         </ul>
       </div>
     </div>
-  </nav>  <header class="page-hero"><div class="container"><span class="eyebrow reveal">Contact</span><h1 class="mt-3 reveal">Connect With The Team</h1><p class="reveal">Send a message, share a public issue, volunteer for activities, or invite the team for a community initiative.</p></div></header>  <section class="section-padding"><div class="container"><div class="row g-5">    <div class="col-lg-5 reveal">      <div class="premium-card">        <h3>Contact Details</h3>                <div class="contact-info"><i class="fa-solid fa-envelope"></i><div><strong>Email</strong><p>abhikmondalbjp@gmail.com</p></div></div>        <div class="contact-info"><i class="fa-solid fa-location-dot"></i><div><strong>Address</strong><p>Asansol, West Bengal, India</p></div></div>        <h4 class="mt-4">Social Media</h4>        <div class="social-icons"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div>      </div>    </div>    <div class="col-lg-7 reveal">      <div class="premium-card">        <h3>Send Message</h3>        <div id="formAlert" class="alert d-none mt-3" role="alert"></div>        <form id="contactForm" class="row g-3 mt-1">          <div class="col-md-6"><input type="text" class="form-control" placeholder="Your Name" required></div>                    <div class="col-md-6"><input type="email" class="form-control" placeholder="Email Address"></div>          <div class="col-md-6"><select class="form-select" required><option value="">Purpose</option><option>Join With Us</option><option>Invite for Event</option><option>Public Issue</option><option>General Message</option></select></div>          <div class="col-12"><textarea class="form-control" rows="5" placeholder="Write your message" required></textarea></div>          <div class="col-12"><button class="btn btn-premium" type="submit">Submit Message</button></div>        </form>      </div>    </div>    <div class="col-12 reveal"><div class="map-placeholder"><div><i class="fa-solid fa-map-location-dot fa-3x mb-3 text-warning"></i><h3>Google Map Placeholder</h3><p class="mb-0">Embed the official Google Map iframe here.</p></div></div></div>  </div></div></section>  <footer class="site-footer"><div class="container"><div class="row g-4"><div class="col-lg-5"><h5>Abhik Kumar Mondal</h5><p>Yuva Morcha President, Asansol</p><div class="social-icons"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div><div class="col-lg-3"><h5>Quick Links</h5><div class="footer-links"><a href="about.html">About</a><a href="vision.html">Vision & Mission</a><a href="social-work.html">Social Work</a><a href="contact.html">Contact</a></div></div><div class="col-lg-4"><h5>Contact</h5><p>Asansol, West Bengal<br>Email: abhikmondalbjp@gmail.com</p></div></div><div class="copyright text-center">Copyright &copy; 2026 Abhik Kumar Mondal. All Rights Reserved.</div></div></footer>  <nav class="mobile-bottom-tabs" aria-label="Mobile quick navigation"><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a><a href="social-work.html"><i class="fa-solid fa-hand-holding-heart"></i><span>Social Work</span></a><a href="gallery.html"><i class="fa-solid fa-images"></i><span>Gallery</span></a><a href="news.html"><i class="fa-solid fa-newspaper"></i><span>Press</span></a></nav>  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="assets/js/main.js"></script></body></html>
+  </nav>
 
+  <header class="page-hero premium-page-hero contact-page-hero">
+    <div class="container">
+      <nav class="premium-breadcrumb reveal" aria-label="Breadcrumb">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <span><i class="fa-solid fa-chevron-right"></i></span>
+        <strong>Contact</strong>
+      </nav>
+      <span class="eyebrow reveal">Contact</span>
+      <h1 class="mt-3 reveal">Connect With The Team</h1>
+      <p class="reveal">For public support, social work coordination, youth programs, and community initiatives in Asansol.</p>
+    </div>
+  </header>
 
+  <section class="section-padding contact-details-section">
+    <div class="container">
+      <div class="contact-details-layout">
+        <div class="contact-details-panel reveal">
+          <span class="eyebrow">Contact Details</span>
+          <h2>Reach the team directly.</h2>
+          <p>Use the official contact points below for public coordination, volunteer communication, and local support.</p>
 
+          <div class="contact-detail-list">
+            <a class="contact-detail-card" href="mailto:abhikmondalbjp@gmail.com">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <strong>Email</strong>
+                <span>abhikmondalbjp@gmail.com</span>
+              </div>
+            </a>
+            <div class="contact-detail-card">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <strong>Address</strong>
+                <span>Asansol, West Bengal, India</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-social-box">
+            <h3>Social Media</h3>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/prince.abhik.58" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-visual-panel reveal">
+          <img src="assets/images/abhik-05.jpg" alt="Abhik Kumar Mondal community activity">
+          <div class="contact-visual-card">
+            <img src="assets/images/yobo-logo.jpg" alt="Yuva Morcha logo">
+            <div>
+              <strong>Yuva Morcha President</strong>
+              <span>Asansol, West Bengal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <h5>Abhik Kumar Mondal</h5>
+          <p>Yuva Morcha President, Asansol</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/prince.abhik.58" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <h5>Quick Links</h5>
+          <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="vision.html">Vision & Mission</a>
+            <a href="social-work.html">Social Work</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <h5>Contact</h5>
+          <p>Asansol, West Bengal<br>Email: abhikmondalbjp@gmail.com</p>
+        </div>
+      </div>
+      <div class="copyright text-center">Copyright &copy; 2026 Abhik Kumar Mondal. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <nav class="mobile-bottom-tabs" aria-label="Mobile quick navigation">
+    <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+    <a href="social-work.html"><i class="fa-solid fa-hand-holding-heart"></i><span>Social Work</span></a>
+    <a href="gallery.html"><i class="fa-solid fa-images"></i><span>Gallery</span></a>
+    <a href="news.html"><i class="fa-solid fa-newspaper"></i><span>Press</span></a>
+  </nav>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
