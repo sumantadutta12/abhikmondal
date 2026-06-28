@@ -42,7 +42,7 @@
       "nav.social": "Social Work",
       "nav.gallery": "Gallery",
       "nav.events": "Events",
-      "nav.news": "News",
+      "nav.news": "Press",
       "nav.contact": "Contact",
       "hero.kicker": "Leadership for Asansol",
       "hero.name": "Abhik Kumar Mondal",
@@ -78,7 +78,7 @@
       "nav.social": "সামাজিক কাজ",
       "nav.gallery": "গ্যালারি",
       "nav.events": "ইভেন্ট",
-      "nav.news": "খবর",
+      "nav.news": "প্রেস",
       "nav.contact": "যোগাযোগ",
       "hero.kicker": "আসানসোলের নেতৃত্ব",
       "hero.name": "অভিক কুমার মণ্ডল",
@@ -114,7 +114,7 @@
       "nav.social": "सामाजिक कार्य",
       "nav.gallery": "गैलरी",
       "nav.events": "कार्यक्रम",
-      "nav.news": "समाचार",
+      "nav.news": "प्रेस",
       "nav.contact": "संपर्क",
       "hero.kicker": "आसनसोल के लिए नेतृत्व",
       "hero.name": "अभिक कुमार मंडल",
@@ -173,16 +173,423 @@
   };
 
   let currentLang = localStorage.getItem("siteLang") || "en";
+  const languageLabels = {
+    en: "English",
+    bn: "Bangla",
+    hi: "Hindi"
+  };
+
+  const cleanTranslations = {
+    bn: {
+      "nav.home": "হোম",
+      "nav.about": "পরিচিতি",
+      "nav.vision": "লক্ষ্য",
+      "nav.social": "সামাজিক কাজ",
+      "nav.gallery": "গ্যালারি",
+      "nav.events": "ইভেন্ট",
+      "nav.news": "প্রেস",
+      "nav.contact": "যোগাযোগ",
+      "hero.kicker": "আসানসোলের নেতৃত্ব",
+      "hero.name": "অভিক কুমার মন্ডল",
+      "hero.role": "যুব মোর্চা সভাপতি, আসানসোল",
+      "hero.tagline": "যুব শক্তি, দেশ আগে",
+      "hero.desc": "জনসেবা, সামাজিক সচেতনতা এবং শক্তিশালী তৃণমূল সংগঠনের জন্য যুব-কেন্দ্রিক নেতৃত্বের প্ল্যাটফর্ম।",
+      "cta.join": "আমাদের সঙ্গে যোগ দিন",
+      "cta.activities": "কার্যক্রম দেখুন",
+      "cta.readMore": "আরও পড়ুন",
+      "cta.gallery": "গ্যালারি দেখুন",
+      "about.eyebrow": "নেতৃত্ব পরিচিতি",
+      "about.heading": "জনসেবা ও তৃণমূল শক্তির জন্য নিবেদিত যুব নেতৃত্ব।",
+      "about.p1": "অভিক কুমার মন্ডল যুবসমাজকে এগিয়ে নেওয়া, সামাজিক সচেতনতা বৃদ্ধি, উন্নয়নকে উৎসাহ দেওয়া এবং আসানসোলে সংগঠনকে শক্তিশালী করার লক্ষ্যে মানুষের পাশে থেকে কাজ করেন।",
+      "about.p2": "তার নেতৃত্বের মূল লক্ষ্য জনসেবা, শৃঙ্খলাবদ্ধ যুব অংশগ্রহণ, পরিচ্ছন্ন নাগরিক উদ্যোগ এবং স্থানীয় মানুষের পাশে থাকা।",
+      "about.cta": "অভিক সম্পর্কে আরও জানুন",
+      "journey.heading": "রাজনৈতিক ও সামাজিক যাত্রা ২০১৬-২০২৬",
+      "social.eyebrow": "সামাজিক কাজ",
+      "social.heading": "বাস্তব প্রভাব তৈরি করা সেবা",
+      "social.desc": "জরুরি সহায়তা থেকে দীর্ঘমেয়াদি সচেতনতা পর্যন্ত, প্রতিটি উদ্যোগ মানুষ, মর্যাদা, যুব অংশগ্রহণ এবং শক্তিশালী আসানসোলকে কেন্দ্র করে।",
+      "social.featureTag": "মানুষ আগে মিশন",
+      "social.featureTitle": "সংগঠিত সেবার মাধ্যমে নাগরিকদের পাশে থাকা।",
+      "social.featureText": "সময়মতো সাহায্য, সচেতনতা এবং সমাজ উন্নয়নের জন্য স্বেচ্ছাসেবক, স্থানীয় দল ও যুবকর্মীদের সমন্বয় করা।",
+      "social.cta": "কাজ দেখুন",
+      "gallery.eyebrow": "গ্যালারি",
+      "gallery.heading": "গ্যালারি ছবি",
+      "gallery.desc": "জনসভা, যুব কার্যক্রম, সামাজিক কাজ এবং তৃণমূল সংযোগের শক্তিশালী মুহূর্ত।",
+      "gallery.cta": "গ্যালারি খুলুন"
+    },
+    hi: {
+      "nav.home": "होम",
+      "nav.about": "परिचय",
+      "nav.vision": "लक्ष्य",
+      "nav.social": "सामाजिक कार्य",
+      "nav.gallery": "गैलरी",
+      "nav.events": "इवेंट",
+      "nav.news": "प्रेस",
+      "nav.contact": "संपर्क",
+      "hero.kicker": "आसनसोल के लिए नेतृत्व",
+      "hero.name": "अभिक कुमार मंडल",
+      "hero.role": "युवा मोर्चा अध्यक्ष, आसनसोल",
+      "hero.tagline": "युवा शक्ति, राष्ट्र पहले",
+      "hero.desc": "जनसेवा, सामाजिक जागरूकता और मजबूत जमीनी संगठन के लिए युवा-केंद्रित नेतृत्व मंच।",
+      "cta.join": "हमसे जुड़ें",
+      "cta.activities": "गतिविधियां देखें",
+      "cta.readMore": "और पढ़ें",
+      "cta.gallery": "गैलरी देखें",
+      "about.eyebrow": "नेतृत्व परिचय",
+      "about.heading": "जनसेवा और जमीनी मजबूती पर केंद्रित समर्पित युवा नेतृत्व।",
+      "about.p1": "अभिक कुमार मंडल युवाओं को सशक्त करने, सामाजिक जागरूकता बढ़ाने, विकास को प्रोत्साहित करने और आसनसोल में संगठन को मजबूत करने के लिए लोगों के साथ काम करते हैं।",
+      "about.p2": "उनका नेतृत्व जनसेवा, अनुशासित युवा भागीदारी, स्वच्छ नागरिक कार्य और स्थानीय समुदायों के प्रति उत्तरदायी सहयोग पर केंद्रित है।",
+      "about.cta": "अभिक के बारे में और पढ़ें",
+      "journey.heading": "राजनीतिक और सामाजिक यात्रा 2016-2026",
+      "social.eyebrow": "सामाजिक कार्य",
+      "social.heading": "ऐसी सेवा जो वास्तविक प्रभाव बनाती है",
+      "social.desc": "आपात सहायता से लेकर लंबे समय की जागरूकता तक, हर पहल लोगों, सम्मान, युवा भागीदारी और मजबूत आसनसोल पर केंद्रित है।",
+      "social.featureTag": "लोग पहले मिशन",
+      "social.featureTitle": "संगठित सेवा के माध्यम से नागरिकों के साथ खड़े रहना।",
+      "social.featureText": "समय पर सहायता, जागरूकता और सामुदायिक विकास के लिए स्वयंसेवकों, स्थानीय टीमों और युवा कार्यकर्ताओं का समन्वय।",
+      "social.cta": "कार्य देखें",
+      "gallery.eyebrow": "गैलरी",
+      "gallery.heading": "गैलरी चित्र",
+      "gallery.desc": "जन कार्यक्रमों, युवा गतिविधियों, सामाजिक कार्य और जमीनी संपर्क के प्रभावशाली क्षण।",
+      "gallery.cta": "गैलरी खोलें"
+    }
+  };
+
+  const cleanJourneyTranslations = {
+    bn: {
+      2016: ["শুরু", "জনসেবার যাত্রা শুরু", "সামাজিক সচেতনতা, জনসহায়তা এবং শৃঙ্খলাবদ্ধ সেবার লক্ষ্য নিয়ে স্থানীয় যুবসমাজ, নাগরিক এবং কমিউনিটি দলের সঙ্গে কাজ শুরু।"],
+      2018: ["তৃণমূল সংযোগ", "স্থানীয় যুব নেটওয়ার্ক শক্তিশালীকরণ", "সভা, সচেতনতা কার্যক্রম, স্বেচ্ছাসেবী সমন্বয় এবং স্থানীয় বিষয়ভিত্তিক কাজের মাধ্যমে যুব অংশগ্রহণ বৃদ্ধি।"],
+      2020: ["সেবা প্রথম", "কমিউনিটি সহায়তায় বিশেষ গুরুত্ব", "কঠিন সময়ে জনসহায়তা, দরিদ্র পরিবারের পাশে থাকা, স্বাস্থ্য সচেতনতা এবং দায়িত্বশীল নাগরিক অংশগ্রহণে কাজ।"],
+      2022: ["সংগঠন", "বুথ স্তরে শক্তিশালী উপস্থিতি", "শৃঙ্খলাবদ্ধ সংগঠন গঠন, দল উন্নয়ন, জনসংযোগ এবং তৃণমূল কাঠামো শক্তিশালী করার উপর জোর।"],
+      2024: ["নেতৃত্ব", "যুব মোর্চা সভাপতি, আসানসোল", "উন্নয়ন, সচেতনতা, জনসেবা এবং দেশ-আগে সংগঠনমূল্য নিয়ে যুবকেন্দ্রিক কার্যক্রমে নেতৃত্ব।"],
+      2026: ["ভবিষ্যৎ লক্ষ্য", "সেবা ও যুব নেতৃত্বের বিস্তার", "আরও শক্তিশালী যুব অংশগ্রহণ, বৃহত্তর জনসেবা কর্মসূচি, সমাজ উন্নয়ন উদ্যোগ এবং আসানসোলের জন্য কেন্দ্রিক লক্ষ্য নিয়ে এগিয়ে চলা।"]
+    },
+    hi: {
+      2016: ["शुरुआत", "जनसेवा यात्रा की शुरुआत", "सामाजिक जागरूकता, जनसहयोग और अनुशासित सेवा पर ध्यान देते हुए स्थानीय युवाओं, नागरिकों और समुदायों के साथ काम शुरू किया।"],
+      2018: ["जमीनी संपर्क", "स्थानीय युवा नेटवर्क को मजबूत किया", "बैठकों, जागरूकता गतिविधियों, स्वयंसेवक समन्वय और स्थानीय मुद्दों पर काम के माध्यम से युवा भागीदारी बढ़ाई।"],
+      2020: ["सेवा प्रथम", "सामुदायिक सहायता पर ध्यान", "कठिन समय में जनसहायता, जरूरतमंद परिवारों का सहयोग, स्वास्थ्य जागरूकता और जिम्मेदार नागरिक भागीदारी पर काम किया।"],
+      2022: ["संगठन", "बूथ स्तर की उपस्थिति मजबूत की", "अनुशासित संगठन निर्माण, टीम विकास, जनसंपर्क और जमीनी ढांचे को मजबूत करने पर ध्यान दिया।"],
+      2024: ["नेतृत्व", "युवा मोर्चा अध्यक्ष, आसनसोल", "विकास, जागरूकता, जनसेवा और राष्ट्र-प्रथम संगठन मूल्यों के साथ युवा-केंद्रित गतिविधियों का नेतृत्व जारी रखा।"],
+      2026: ["भविष्य मिशन", "सेवा और युवा नेतृत्व का विस्तार", "मजबूत युवा भागीदारी, व्यापक जनसेवा कार्यक्रमों, सामुदायिक विकास और आसनसोल के लिए केंद्रित मिशन के साथ आगे बढ़ना।"]
+    }
+  };
+
+  const originalTextNodes = new WeakMap();
+  const translatableAttributes = ["placeholder", "aria-label", "alt", "data-caption"];
+  const staticTextTranslations = {
+    bn: {
+      "Home": "হোম",
+      "About": "সম্পর্কে",
+      "Social Work": "সামাজিক কাজ",
+      "Gallery": "গ্যালারি",
+      "Press": "প্রেস",
+      "Contact": "যোগাযোগ",
+      "Vision & Mission": "ভিশন ও মিশন",
+      "Quick Links": "দ্রুত লিংক",
+      "Abhik Kumar Mondal": "অভিক কুমার মন্ডল",
+      "Yuva Morcha President, Asansol": "যুব মোর্চা সভাপতি, আসানসোল",
+      "Asansol, West Bengal, India": "আসানসোল, পশ্চিমবঙ্গ, ভারত",
+      "Asansol, West Bengal": "আসানসোল, পশ্চিমবঙ্গ",
+      "Join With Us": "আমাদের সঙ্গে যোগ দিন",
+      "View Gallery": "গ্যালারি দেখুন",
+      "Open Gallery": "গ্যালারি খুলুন",
+      "View Social Work": "সামাজিক কাজ দেখুন",
+      "View Activities": "কার্যক্রম দেখুন",
+      "Read More": "আরও পড়ুন",
+      "Read More About Abhik": "অভিক সম্পর্কে আরও জানুন",
+      "Connect With Team": "টিমের সঙ্গে যোগাযোগ করুন",
+      "Contact Team": "টিমের সঙ্গে যোগাযোগ",
+      "About Leadership": "নেতৃত্ব সম্পর্কে",
+      "Profile": "প্রোফাইল",
+      "Core Focus": "মূল লক্ষ্য",
+      "Leadership Priorities": "নেতৃত্বের অগ্রাধিকার",
+      "Journey": "যাত্রা",
+      "Political & Social Journey 2016-2026": "রাজনৈতিক ও সামাজিক যাত্রা ২০১৬-২০২৬",
+      "Social Updates": "সামাজিক আপডেট",
+      "Latest Social Updates": "সর্বশেষ সামাজিক আপডেট",
+      "Gallery Images": "গ্যালারি ছবি",
+      "Service That Creates Real Impact": "বাস্তব প্রভাব তৈরি করা সেবা",
+      "People First Mission": "মানুষ আগে মিশন",
+      "Explore Work": "কাজ দেখুন",
+      "Blood Donation Camps": "রক্তদান শিবির",
+      "Cleanliness Drives": "পরিচ্ছন্নতা অভিযান",
+      "Awareness Campaigns": "সচেতনতা অভিযান",
+      "Support For Needy": "প্রয়োজনে সহায়তা",
+      "Youth Engagement": "যুব সম্পৃক্ততা",
+      "Community Development": "কমিউনিটি উন্নয়ন",
+      "Youth Connect": "যুব সংযোগ",
+      "Public Service": "জনসেবা",
+      "Social Awareness": "সামাজিক সচেতনতা",
+      "Nation First": "দেশ আগে",
+      "Youth Leadership": "যুব নেতৃত্ব",
+      "Press Coverage & Public Updates": "প্রেস কভারেজ ও জন আপডেট",
+      "Latest Press Highlights": "সর্বশেষ প্রেস হাইলাইট",
+      "Press Resources": "প্রেস রিসোর্স",
+      "BJP Yuva Morcha Work On The Ground": "মাঠপর্যায়ে বিজেপি যুব মোর্চার কাজ",
+      "Service Areas": "সেবার ক্ষেত্র",
+      "How We Work": "আমরা কীভাবে কাজ করি",
+      "Youth Power, Nation First": "যুব শক্তি, দেশ আগে",
+      "Mission for Asansol": "আসানসোলের জন্য মিশন",
+      "Contact Details": "যোগাযোগের তথ্য",
+      "Send Message": "বার্তা পাঠান",
+      "Submit Message": "বার্তা জমা দিন"
+    },
+    hi: {
+      "Home": "होम",
+      "About": "परिचय",
+      "Social Work": "सामाजिक कार्य",
+      "Gallery": "गैलरी",
+      "Press": "प्रेस",
+      "Contact": "संपर्क",
+      "Vision & Mission": "विजन और मिशन",
+      "Quick Links": "त्वरित लिंक",
+      "Abhik Kumar Mondal": "अभिक कुमार मंडल",
+      "Yuva Morcha President, Asansol": "युवा मोर्चा अध्यक्ष, आसनसोल",
+      "Asansol, West Bengal, India": "आसनसोल, पश्चिम बंगाल, भारत",
+      "Asansol, West Bengal": "आसनसोल, पश्चिम बंगाल",
+      "Join With Us": "हमसे जुड़ें",
+      "View Gallery": "गैलरी देखें",
+      "Open Gallery": "गैलरी खोलें",
+      "View Social Work": "सामाजिक कार्य देखें",
+      "View Activities": "गतिविधियां देखें",
+      "Read More": "और पढ़ें",
+      "Read More About Abhik": "अभिक के बारे में और पढ़ें",
+      "Connect With Team": "टीम से जुड़ें",
+      "Contact Team": "टीम से संपर्क करें",
+      "About Leadership": "नेतृत्व परिचय",
+      "Profile": "प्रोफाइल",
+      "Core Focus": "मुख्य फोकस",
+      "Leadership Priorities": "नेतृत्व प्राथमिकताएं",
+      "Journey": "यात्रा",
+      "Political & Social Journey 2016-2026": "राजनीतिक और सामाजिक यात्रा 2016-2026",
+      "Social Updates": "सोशल अपडेट",
+      "Latest Social Updates": "नवीनतम सोशल अपडेट",
+      "Gallery Images": "गैलरी चित्र",
+      "Service That Creates Real Impact": "ऐसी सेवा जो वास्तविक प्रभाव बनाती है",
+      "People First Mission": "लोग पहले मिशन",
+      "Explore Work": "कार्य देखें",
+      "Blood Donation Camps": "रक्तदान शिविर",
+      "Cleanliness Drives": "स्वच्छता अभियान",
+      "Awareness Campaigns": "जागरूकता अभियान",
+      "Support For Needy": "जरूरतमंदों की सहायता",
+      "Youth Engagement": "युवा सहभागिता",
+      "Community Development": "सामुदायिक विकास",
+      "Youth Connect": "युवा संपर्क",
+      "Public Service": "जनसेवा",
+      "Social Awareness": "सामाजिक जागरूकता",
+      "Nation First": "राष्ट्र पहले",
+      "Youth Leadership": "युवा नेतृत्व",
+      "Press Coverage & Public Updates": "प्रेस कवरेज और सार्वजनिक अपडेट",
+      "Latest Press Highlights": "नवीनतम प्रेस हाइलाइट्स",
+      "Press Resources": "प्रेस संसाधन",
+      "BJP Yuva Morcha Work On The Ground": "मैदान में भाजपा युवा मोर्चा का काम",
+      "Service Areas": "सेवा क्षेत्र",
+      "How We Work": "हम कैसे काम करते हैं",
+      "Youth Power, Nation First": "युवा शक्ति, राष्ट्र प्रथम",
+      "Mission for Asansol": "आसनसोल के लिए मिशन",
+      "Contact Details": "संपर्क विवरण",
+      "Send Message": "संदेश भेजें",
+      "Submit Message": "संदेश जमा करें"
+    }
+  };
+
+  const extraStaticTextTranslations = {
+    bn: {
+      "Select Language": "ভাষা নির্বাচন করুন",
+      "Toggle navigation": "মেনু খুলুন",
+      "Mobile quick navigation": "মোবাইল দ্রুত নেভিগেশন",
+      "Connect With The Team": "টিমের সঙ্গে যোগাযোগ করুন",
+      "Send a message, share a public issue, volunteer for activities, or invite the team for a community initiative.": "বার্তা পাঠান, জনসমস্যা জানান, কার্যক্রমে স্বেচ্ছাসেবক হন বা কমিউনিটি উদ্যোগে টিমকে আমন্ত্রণ জানান।",
+      "Email": "ইমেইল",
+      "Address": "ঠিকানা",
+      "Social Media": "সোশ্যাল মিডিয়া",
+      "Your Name": "আপনার নাম",
+      "Email Address": "ইমেইল ঠিকানা",
+      "Purpose": "উদ্দেশ্য",
+      "Invite for Event": "ইভেন্টে আমন্ত্রণ",
+      "Public Issue": "জনসমস্যা",
+      "General Message": "সাধারণ বার্তা",
+      "Write your message": "আপনার বার্তা লিখুন",
+      "Google Map Placeholder": "গুগল ম্যাপ প্লেসহোল্ডার",
+      "Embed the official Google Map iframe here.": "এখানে অফিসিয়াল Google Map iframe বসান।",
+      "Events": "ইভেন্ট",
+      "Upcoming & Recent Events": "আসন্ন ও সাম্প্রতিক ইভেন্ট",
+      "Event cards with dates, locations, and public activity details for Asansol.": "আসানসোলের তারিখ, স্থান এবং জন কার্যক্রমের বিবরণসহ ইভেন্ট কার্ড।",
+      "Youth Leadership Meeting": "যুব নেতৃত্ব সভা",
+      "Cleanliness Drive": "পরিচ্ছন্নতা অভিযান",
+      "Public Awareness Camp": "জনসচেতনতা শিবির",
+      "Blood Donation Initiative": "রক্তদান উদ্যোগ",
+      "Vision & Mission": "ভিশন ও মিশন",
+      "A clear agenda for youth empowerment, social service, awareness, clean development, and strong organization building.": "যুব ক্ষমতায়ন, সামাজিক সেবা, সচেতনতা, পরিচ্ছন্ন উন্নয়ন এবং শক্তিশালী সংগঠন গঠনের স্পষ্ট লক্ষ্য।",
+      "Youth Empowerment": "যুব ক্ষমতায়ন",
+      "Create platforms where young citizens can learn, lead, volunteer, and contribute to public development.": "যেখানে তরুণ নাগরিকরা শিখতে, নেতৃত্ব দিতে, স্বেচ্ছাসেবা করতে এবং জন উন্নয়নে অবদান রাখতে পারে এমন প্ল্যাটফর্ম তৈরি করা।",
+      "Social Service": "সামাজিক সেবা",
+      "Organize practical service initiatives that directly support people in difficult situations.": "কঠিন পরিস্থিতিতে মানুষের সরাসরি সহায়তায় বাস্তব সেবা উদ্যোগ সংগঠিত করা।",
+      "Clean Developed Society": "পরিচ্ছন্ন উন্নত সমাজ",
+      "Encourage cleanliness, discipline, civic awareness, and development-focused public participation.": "পরিচ্ছন্নতা, শৃঙ্খলা, নাগরিক সচেতনতা এবং উন্নয়নমুখী জন অংশগ্রহণকে উৎসাহিত করা।",
+      "Education & Awareness": "শিক্ষা ও সচেতনতা",
+      "Promote awareness on health, education, rights, duties, and community responsibility.": "স্বাস্থ্য, শিক্ষা, অধিকার, কর্তব্য এবং কমিউনিটি দায়িত্ব সম্পর্কে সচেতনতা বাড়ানো।",
+      "Nation-First Ideology": "দেশ-প্রথম আদর্শ",
+      "Strengthen national pride, cultural values, constitutional responsibility, and service to Bharat.": "জাতীয় গর্ব, সাংস্কৃতিক মূল্যবোধ, সাংবিধানিক দায়িত্ব এবং ভারতসেবাকে শক্তিশালী করা।",
+      "Organization Building": "সংগঠন গঠন",
+      "Develop disciplined booth-level and ward-level teams that remain connected with people.": "মানুষের সঙ্গে যুক্ত থাকা শৃঙ্খলাবদ্ধ বুথ ও ওয়ার্ড স্তরের দল গড়ে তোলা।",
+      "Listen": "শোনা",
+      "Understand public needs through direct contact.": "সরাসরি যোগাযোগের মাধ্যমে মানুষের প্রয়োজন বোঝা।",
+      "Organize": "সংগঠিত করা",
+      "Mobilize youth teams and local volunteers.": "যুব দল ও স্থানীয় স্বেচ্ছাসেবকদের সক্রিয় করা।",
+      "Serve": "সেবা করা",
+      "Deliver practical help and social awareness.": "বাস্তব সহায়তা ও সামাজিক সচেতনতা পৌঁছে দেওয়া।",
+      "Community Outreach": "কমিউনিটি সংযোগ",
+      "Organization Connect": "সংগঠন সংযোগ",
+      "Grassroots Campaign": "তৃণমূল প্রচার",
+      "Leadership Identity": "নেতৃত্ব পরিচয়",
+      "Public Activity": "জন কার্যক্রম",
+      "Community Program": "কমিউনিটি প্রোগ্রাম",
+      "Leadership Program": "নেতৃত্ব প্রোগ্রাম",
+      "Organization Work": "সংগঠনের কাজ",
+      "Copyright © 2026 Abhik Kumar Mondal. All Rights Reserved.": "কপিরাইট © ২০২৬ অভিক কুমার মন্ডল। সর্বস্বত্ব সংরক্ষিত।"
+    },
+    hi: {
+      "Select Language": "भाषा चुनें",
+      "Toggle navigation": "मेनू खोलें",
+      "Mobile quick navigation": "मोबाइल त्वरित नेविगेशन",
+      "Connect With The Team": "टीम से संपर्क करें",
+      "Send a message, share a public issue, volunteer for activities, or invite the team for a community initiative.": "संदेश भेजें, जन समस्या साझा करें, गतिविधियों में स्वयंसेवक बनें या सामुदायिक पहल के लिए टीम को आमंत्रित करें।",
+      "Email": "ईमेल",
+      "Address": "पता",
+      "Social Media": "सोशल मीडिया",
+      "Your Name": "आपका नाम",
+      "Email Address": "ईमेल पता",
+      "Purpose": "उद्देश्य",
+      "Invite for Event": "इवेंट के लिए आमंत्रण",
+      "Public Issue": "जन समस्या",
+      "General Message": "सामान्य संदेश",
+      "Write your message": "अपना संदेश लिखें",
+      "Google Map Placeholder": "गूगल मैप प्लेसहोल्डर",
+      "Embed the official Google Map iframe here.": "यहां आधिकारिक Google Map iframe जोड़ें।",
+      "Events": "इवेंट",
+      "Upcoming & Recent Events": "आगामी और हाल के इवेंट",
+      "Event cards with dates, locations, and public activity details for Asansol.": "आसनसोल के लिए तारीख, स्थान और जन गतिविधि विवरण वाले इवेंट कार्ड।",
+      "Youth Leadership Meeting": "युवा नेतृत्व बैठक",
+      "Cleanliness Drive": "स्वच्छता अभियान",
+      "Public Awareness Camp": "जन जागरूकता शिविर",
+      "Blood Donation Initiative": "रक्तदान पहल",
+      "Vision & Mission": "विजन और मिशन",
+      "A clear agenda for youth empowerment, social service, awareness, clean development, and strong organization building.": "युवा सशक्तिकरण, सामाजिक सेवा, जागरूकता, स्वच्छ विकास और मजबूत संगठन निर्माण का स्पष्ट एजेंडा।",
+      "Youth Empowerment": "युवा सशक्तिकरण",
+      "Create platforms where young citizens can learn, lead, volunteer, and contribute to public development.": "ऐसे मंच बनाना जहां युवा नागरिक सीख सकें, नेतृत्व कर सकें, स्वयंसेवा कर सकें और जन विकास में योगदान दे सकें।",
+      "Social Service": "सामाजिक सेवा",
+      "Organize practical service initiatives that directly support people in difficult situations.": "कठिन परिस्थितियों में लोगों को सीधे सहयोग देने वाली व्यावहारिक सेवा पहल आयोजित करना।",
+      "Clean Developed Society": "स्वच्छ विकसित समाज",
+      "Encourage cleanliness, discipline, civic awareness, and development-focused public participation.": "स्वच्छता, अनुशासन, नागरिक जागरूकता और विकास-केंद्रित जन भागीदारी को प्रोत्साहित करना।",
+      "Education & Awareness": "शिक्षा और जागरूकता",
+      "Promote awareness on health, education, rights, duties, and community responsibility.": "स्वास्थ्य, शिक्षा, अधिकार, कर्तव्य और सामुदायिक जिम्मेदारी पर जागरूकता बढ़ाना।",
+      "Nation-First Ideology": "राष्ट्र-प्रथम विचारधारा",
+      "Strengthen national pride, cultural values, constitutional responsibility, and service to Bharat.": "राष्ट्रीय गौरव, सांस्कृतिक मूल्यों, संवैधानिक जिम्मेदारी और भारत सेवा को मजबूत करना।",
+      "Organization Building": "संगठन निर्माण",
+      "Develop disciplined booth-level and ward-level teams that remain connected with people.": "लोगों से जुड़े रहने वाली अनुशासित बूथ और वार्ड स्तर की टीमों का विकास करना।",
+      "Listen": "सुनना",
+      "Understand public needs through direct contact.": "सीधे संपर्क से जनता की जरूरतों को समझना।",
+      "Organize": "संगठित करना",
+      "Mobilize youth teams and local volunteers.": "युवा टीमों और स्थानीय स्वयंसेवकों को सक्रिय करना।",
+      "Serve": "सेवा करना",
+      "Deliver practical help and social awareness.": "व्यावहारिक सहायता और सामाजिक जागरूकता पहुंचाना।",
+      "Community Outreach": "सामुदायिक संपर्क",
+      "Organization Connect": "संगठन संपर्क",
+      "Grassroots Campaign": "जमीनी अभियान",
+      "Leadership Identity": "नेतृत्व पहचान",
+      "Public Activity": "जन गतिविधि",
+      "Community Program": "सामुदायिक कार्यक्रम",
+      "Leadership Program": "नेतृत्व कार्यक्रम",
+      "Organization Work": "संगठन कार्य",
+      "Copyright © 2026 Abhik Kumar Mondal. All Rights Reserved.": "कॉपीराइट © 2026 अभिक कुमार मंडल। सर्वाधिकार सुरक्षित।"
+    }
+  };
+
+  function collectOriginalTextNodes() {
+    $("body").find("*").addBack().contents().filter(function () {
+      return this.nodeType === 3 && this.nodeValue.trim().length > 1;
+    }).each(function () {
+      const parent = this.parentElement;
+      if (!parent || $(parent).closest("script, style, select, textarea, .language-switcher").length) {
+        return;
+      }
+      if (!originalTextNodes.has(this)) {
+        originalTextNodes.set(this, this.nodeValue.trim());
+      }
+    });
+
+    $("[placeholder], [aria-label], [alt], [data-caption]").each(function () {
+      const element = $(this);
+      translatableAttributes.forEach(function (attribute) {
+        const value = element.attr(attribute);
+        if (value && !element.data("original-" + attribute)) {
+          element.data("original-" + attribute, value.trim());
+        }
+      });
+    });
+
+    $("select:not(#languageSelect) option").each(function () {
+      const option = $(this);
+      if (!option.data("original-text")) {
+        option.data("original-text", option.text().trim());
+      }
+    });
+  }
+
+  function translateStaticText(lang) {
+    const dictionary = {
+      ...(staticTextTranslations[lang] || {}),
+      ...(extraStaticTextTranslations[lang] || {})
+    };
+    $("body").find("*").addBack().contents().filter(function () {
+      return this.nodeType === 3 && this.nodeValue.trim().length > 1;
+    }).each(function () {
+      const parent = this.parentElement;
+      if (!parent || $(parent).closest("script, style, select, textarea, .language-switcher").length) {
+        return;
+      }
+      const original = originalTextNodes.get(this) || this.nodeValue.trim();
+      const leading = this.nodeValue.match(/^\s*/)[0];
+      const trailing = this.nodeValue.match(/\s*$/)[0];
+      this.nodeValue = leading + (lang === "en" ? original : (dictionary[original] || original)) + trailing;
+    });
+
+    $("[placeholder], [aria-label], [alt], [data-caption]").each(function () {
+      const element = $(this);
+      translatableAttributes.forEach(function (attribute) {
+        const original = element.data("original-" + attribute);
+        if (!original) {
+          return;
+        }
+        element.attr(attribute, lang === "en" ? original : (dictionary[original] || original));
+      });
+    });
+
+    $("select:not(#languageSelect) option").each(function () {
+      const option = $(this);
+      const original = option.data("original-text");
+      if (original) {
+        option.text(lang === "en" ? original : (dictionary[original] || original));
+      }
+    });
+  }
 
   function applyLanguage(lang) {
     const dictionary = translations[lang] || translations.en;
+    const cleanDictionary = cleanTranslations[lang] || {};
     $("[data-i18n]").each(function () {
       const key = $(this).data("i18n");
-      if (dictionary[key]) {
-        $(this).text(dictionary[key]);
+      if (cleanDictionary[key] || dictionary[key]) {
+        $(this).text(cleanDictionary[key] || dictionary[key]);
       }
     });
     $("#languageSelect").val(lang);
+    $(".language-current span").text(languageLabels[lang] || languageLabels.en);
+    $(".language-option").each(function () {
+      const isActive = $(this).data("lang") === lang;
+      $(this).toggleClass("active", isActive).attr("aria-selected", isActive ? "true" : "false");
+    });
+    translateStaticText(lang);
     $("html").attr("lang", lang === "bn" ? "bn" : lang === "hi" ? "hi" : "en");
     localStorage.setItem("siteLang", lang);
     currentLang = lang;
@@ -195,8 +602,63 @@
     applyLanguage($(this).val());
   });
 
+  $(".language-current").on("click", function (event) {
+    event.stopPropagation();
+    const switcher = $(this).closest(".language-switcher");
+    const isOpen = switcher.toggleClass("open").hasClass("open");
+    $(this).attr("aria-expanded", isOpen ? "true" : "false");
+  });
+
+  $(".language-option").on("click", function (event) {
+    event.stopPropagation();
+    const lang = $(this).data("lang");
+    applyLanguage(lang);
+    $(".language-switcher").removeClass("open");
+    $(".language-current").attr("aria-expanded", "false");
+  });
+
+  $(document).on("click", function () {
+    $(".language-switcher").removeClass("open");
+    $(".language-current").attr("aria-expanded", "false");
+  });
+
   if ($(".language-switcher").length) {
+    collectOriginalTextNodes();
     applyLanguage(localStorage.getItem("siteLang") || "en");
+  }
+
+  const mobileNavbar = $("#mainNavbar");
+  if (mobileNavbar.length) {
+    mobileNavbar.on("show.bs.collapse", function () {
+      $(this).removeClass("drawer-closing");
+      $("body").addClass("nav-drawer-open");
+    });
+
+    mobileNavbar.on("hide.bs.collapse", function () {
+      $(this).addClass("drawer-closing");
+    });
+
+    mobileNavbar.on("hidden.bs.collapse", function () {
+      $(this).removeClass("drawer-closing");
+      $("body").removeClass("nav-drawer-open");
+    });
+
+    mobileNavbar.find(".nav-link").on("click", function () {
+      const collapseInstance = bootstrap.Collapse.getOrCreateInstance(mobileNavbar[0], { toggle: false });
+      collapseInstance.hide();
+    });
+
+    $(document).on("click", function (event) {
+      if (!mobileNavbar.hasClass("show")) {
+        return;
+      }
+      const target = $(event.target);
+      if (target.closest("#mainNavbar, .navbar-toggler").length) {
+        return;
+      }
+      const collapseInstance = bootstrap.Collapse.getOrCreateInstance(mobileNavbar[0], { toggle: false });
+      collapseInstance.hide();
+    });
   }
 
   function revealOnScroll() {
@@ -231,7 +693,7 @@
       autoplaySpeed: 3600,
       arrows: true,
       dots: true,
-      slidesToShow: 3,
+      slidesToShow: 2,
       slidesToScroll: 1,
       initialSlide: 0,
       speed: 650,
@@ -246,7 +708,7 @@
         {
           breakpoint: 1200,
           settings: {
-            slidesToShow: 2
+            slidesToShow: 1
           }
         },
         {
@@ -292,7 +754,8 @@
     image.css("opacity", 0);
     setTimeout(function () {
       const year = button.data("year");
-      const translatedJourney = (journeyTranslations[currentLang] || journeyTranslations.en)[year];
+      const journeyDictionary = cleanJourneyTranslations[currentLang] || journeyTranslations[currentLang] || journeyTranslations.en;
+      const translatedJourney = journeyDictionary[year];
       image.attr("src", button.data("image"));
       image.attr("alt", translatedJourney ? translatedJourney[1] : button.data("title"));
       $("#journeyYear").text(year);

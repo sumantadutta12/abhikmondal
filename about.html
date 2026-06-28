@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,26 +8,194 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"><link href="assets/css/style.css" rel="stylesheet">
 </head>
-<body>
-  <nav class="navbar navbar-expand-lg fixed-top site-navbar"><div class="container"><a class="navbar-brand brand-switch d-flex align-items-center gap-2" href="index.html"><span class="brand-mark"><img class="brand-logo brand-logo-main" src="assets/images/logo-111.webp" alt="BJP logo"><img class="brand-logo brand-logo-yuva" src="assets/images/yobo-logo.jpg" alt="Yuva Morcha logo"></span><span class="brand-copy"><strong class="d-block">Abhik Kumar Mondal</strong><span class="brand-role">Yuva Morcha President, Asansol</span></span></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNavbar"><ul class="navbar-nav ms-auto align-items-lg-center"><li class="nav-item"><a class="nav-link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="about.html">About</a></li><li class="nav-item"><a class="nav-link" href="vision.html">Vision</a></li><li class="nav-item"><a class="nav-link" href="social-work.html">Social Work</a></li><li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li><li class="nav-item"><a class="nav-link" href="events.html">Events</a></li><li class="nav-item"><a class="nav-link" href="news.html">News</a></li><li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li></ul></div></div></nav>
-  <header class="page-hero"><div class="container"><span class="eyebrow reveal">About</span><h1 class="mt-3 reveal">Dedicated Youth Leadership</h1><p class="reveal">A professional profile of Abhik Kumar Mondal and his commitment to public service, youth empowerment, awareness, development, and grassroots organization in Asansol.</p></div></header>
-  <section class="section-padding">
+<body class="about-page">
+  <nav class="navbar navbar-expand-lg fixed-top site-navbar">
     <div class="container">
-      <div class="row g-5 align-items-center">
-        <div class="col-lg-5 reveal"><img class="rounded-4 shadow" src="assets/images/abhik-placeholder.svg" alt="Abhik Kumar Mondal portrait placeholder"></div>
-        <div class="col-lg-7 reveal">
+      <a class="navbar-brand brand-switch d-flex align-items-center gap-2" href="index.html">
+        <span class="brand-mark">
+          <img class="brand-logo brand-logo-main" src="assets/images/logo-111.webp" alt="BJP logo">
+          <img class="brand-logo brand-logo-yuva" src="assets/images/yobo-logo.jpg" alt="Yuva Morcha logo">
+        </span>
+        <span class="brand-copy">
+          <strong class="d-block">Abhik Kumar Mondal</strong>
+          <span class="brand-role">Yuva Morcha President, Asansol</span>
+        </span>
+      </a>
+      <div class="language-switcher ms-lg-3">
+  <label class="visually-hidden" for="languageSelect">Select Language</label>
+  <select id="languageSelect" class="language-native" aria-label="Select Language" tabindex="-1">
+    <option value="en">English</option>
+    <option value="bn">Bangla</option>
+    <option value="hi">Hindi</option>
+  </select>
+  <button class="language-current" type="button" aria-haspopup="listbox" aria-expanded="false">
+    <i class="fa-solid fa-globe"></i>
+    <span>English</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+  <div class="language-options" role="listbox" aria-label="Select Language">
+    <button type="button" class="language-option active" data-lang="en" role="option" aria-selected="true">English</button>
+    <button type="button" class="language-option" data-lang="bn" role="option" aria-selected="false">Bangla</button>
+    <button type="button" class="language-option" data-lang="hi" role="option" aria-selected="false">Hindi</button>
+  </div>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="nav.home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html" data-i18n="nav.about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="social-work.html" data-i18n="nav.social">Social Work</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html" data-i18n="nav.gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="news.html" data-i18n="nav.news">Press</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="about-hero">
+    <div class="about-hero-media" aria-hidden="true">
+      <img src="assets/images/abhik-02.jpg" alt="">
+    </div>
+    <div class="container">
+      <div class="about-hero-content reveal">
+        <span class="eyebrow">About Leadership</span>
+        <h1>Abhik Kumar Mondal</h1>
+        <p class="about-hero-role">Yuva Morcha President, Asansol</p>
+        <p class="about-hero-text">A disciplined youth leadership profile focused on public service, grassroots organization, civic responsibility, and people-first work across Asansol.</p>
+        <div class="about-hero-actions">
+          <a class="btn btn-premium" href="contact.html">Connect With Team</a>
+          <a class="btn btn-outline-premium" href="social-work.html">View Social Work</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section-padding about-profile-section">
+    <div class="container">
+      <div class="about-profile-grid">
+        <div class="about-profile-visual reveal">
+          <img class="about-profile-main" src="assets/images/abhik-03.jpg" alt="Abhik Kumar Mondal public activity">
+          <div class="about-profile-badge">
+            <img src="assets/images/yobo-logo.jpg" alt="Yuva Morcha logo">
+            <div><strong>People First</strong><span>Leadership through service</span></div>
+          </div>
+        </div>
+        <div class="about-profile-copy reveal">
           <span class="eyebrow">Profile</span>
-          <h2 class="mt-3 mb-3">Working with discipline, service, and organization-first values.</h2>
-          <p class="lead-muted">Abhik Kumar Mondal is a dedicated youth leader from Asansol, committed to public service and active grassroots engagement. As Yuva Morcha President, Asansol, his focus is to connect young citizens with constructive social initiatives, civic responsibility, and development-oriented thinking.</p>
-          <p class="lead-muted">His work emphasizes youth empowerment, social awareness, support for needy families, education campaigns, and stronger local organization. He believes leadership must remain close to people, responsive to local issues, and committed to the larger national interest.</p>
-          <p class="lead-muted">Through community programs, volunteer coordination, and public outreach, he continues to encourage disciplined youth participation for a cleaner, safer, more aware, and more developed Asansol.</p>
+          <h2>Grounded leadership shaped by service, discipline, and direct public connect.</h2>
+          <p class="lead-muted">Abhik Kumar Mondal works with a clear focus on youth participation, social awareness, and responsive grassroots coordination. His public work is centered on listening to local needs and helping young people participate in constructive action.</p>
+          <p class="lead-muted">As Yuva Morcha President, Asansol, he continues to support community programs, volunteer coordination, awareness campaigns, and people-focused initiatives with an organization-first mindset.</p>
+          <div class="about-signature-row">
+            <div><strong>Asansol</strong><span>West Bengal</span></div>
+            <div><strong>Youth</strong><span>Empowerment</span></div>
+            <div><strong>Service</strong><span>Public Mission</span></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  <section class="section-padding band"><div class="container"><div class="row g-4"><div class="col-md-4 reveal"><div class="premium-card"><div class="icon-box"><i class="fa-solid fa-users"></i></div><h4>Youth Connect</h4><p>Building confident youth participation through meetings, service programs, and leadership opportunities.</p></div></div><div class="col-md-4 reveal"><div class="premium-card"><div class="icon-box"><i class="fa-solid fa-hand-holding-heart"></i></div><h4>Public Service</h4><p>Responding to community needs with practical support, awareness, and volunteer coordination.</p></div></div><div class="col-md-4 reveal"><div class="premium-card"><div class="icon-box"><i class="fa-solid fa-flag"></i></div><h4>Nation First</h4><p>Promoting civic duty, national pride, disciplined organization, and constructive public action.</p></div></div></div></div></section>
-  <footer class="site-footer"><div class="container"><div class="row g-4"><div class="col-lg-5"><h5>Abhik Kumar Mondal</h5><p>Yuva Morcha President, Asansol</p><div class="social-icons"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div><div class="col-lg-3"><h5>Quick Links</h5><div class="footer-links"><a href="about.html">About</a><a href="vision.html">Vision & Mission</a><a href="social-work.html">Social Work</a><a href="contact.html">Contact</a></div></div><div class="col-lg-4"><h5>Contact</h5><p>Asansol, West Bengal<br>Phone: +91 90000 00000<br>Email: abhikmondalbjp@gmail.com</p></div></div><div class="copyright text-center">Copyright &copy; 2026 Abhik Kumar Mondal. All Rights Reserved.</div></div></footer>
-  <nav class="mobile-bottom-tabs" aria-label="Mobile quick navigation"><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a><a href="social-work.html"><i class="fa-solid fa-hand-holding-heart"></i><span>Social Work</span></a><a href="gallery.html"><i class="fa-solid fa-images"></i><span>Gallery</span></a><a href="news.html"><i class="fa-solid fa-newspaper"></i><span>News</span></a></nav>
+
+  <section class="section-padding about-values-section">
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="eyebrow">Core Focus</span>
+        <h2>Leadership Priorities</h2>
+        <p>Focused areas that guide public outreach, youth programs, and community-level coordination.</p>
+      </div>
+      <div class="about-values-grid">
+        <article class="about-value-card reveal">
+          <i class="fa-solid fa-people-group"></i>
+          <h3>Youth Connect</h3>
+          <p>Building confident youth participation through meetings, local programs, and leadership opportunities.</p>
+        </article>
+        <article class="about-value-card reveal">
+          <i class="fa-solid fa-hand-holding-heart"></i>
+          <h3>Public Service</h3>
+          <p>Supporting people through awareness, volunteer coordination, and practical community initiatives.</p>
+        </article>
+        <article class="about-value-card reveal">
+          <i class="fa-solid fa-bullhorn"></i>
+          <h3>Social Awareness</h3>
+          <p>Encouraging civic responsibility, cleanliness, education, health awareness, and responsible public action.</p>
+        </article>
+        <article class="about-value-card reveal">
+          <i class="fa-solid fa-flag"></i>
+          <h3>Nation First</h3>
+          <p>Promoting disciplined organization, national pride, and development-oriented thinking among youth.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding journey-section">
+    <div class="container">
+      <div class="journey-header reveal">
+        <div>
+          <span class="journey-label">Journey</span>
+          <h2 data-i18n="journey.heading">Political & Social Journey 2016-2026</h2>
+          <p>From grassroots service to youth leadership, a focused journey of organization, awareness, and public work.</p>
+        </div>
+        <div class="journey-controls">
+          <button type="button" class="journey-prev" aria-label="Previous journey item"><i class="fa-solid fa-chevron-left"></i></button>
+          <button type="button" class="journey-next" aria-label="Next journey item"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+      <div class="journey-year-nav reveal" role="tablist" aria-label="Journey years">
+        <button type="button" class="active" data-year="2016" data-title="Started Public Service Journey" data-tag="Beginning" data-image="assets/images/abhik-01.jpg" data-text="Started working closely with local youth, citizens, and community groups with a focus on social awareness, public support, and disciplined service.">2016<span></span></button>
+        <button type="button" data-year="2018" data-title="Strengthened Local Youth Network" data-tag="Grassroots Connect" data-image="assets/images/abhik-02.jpg" data-text="Expanded youth participation through meetings, awareness activities, volunteer coordination, and local issue-based work across Asansol.">2018<span></span></button>
+        <button type="button" data-year="2020" data-title="Focused Community Support" data-tag="Service First" data-image="assets/images/abhik-03.jpg" data-text="Worked on public help initiatives, support for needy families, health awareness, and responsible civic participation during difficult times.">2020<span></span></button>
+        <button type="button" data-year="2022" data-title="Built Stronger Booth-Level Presence" data-tag="Organization" data-image="assets/images/abhik-04.jpg" data-text="Focused on disciplined organization building, team development, public outreach, and strengthening grassroots structure.">2022<span></span></button>
+        <button type="button" data-year="2024" data-title="Yuva Morcha President, Asansol" data-tag="Leadership" data-image="assets/images/abhik-05.jpg" data-text="Continued leading youth-focused activities for development, awareness, public service, and nation-first organizational values.">2024<span></span></button>
+        <button type="button" data-year="2026" data-title="Expanding Service & Youth Leadership" data-tag="Future Mission" data-image="assets/images/abhik-06.jpg" data-text="Moving forward with stronger youth engagement, wider public service programs, community development initiatives, and a focused mission for Asansol.">2026<span></span></button>
+      </div>
+      <div class="journey-display reveal">
+        <div class="journey-image-panel">
+          <img id="journeyImage" src="assets/images/abhik-01.jpg" alt="Journey image">
+        </div>
+        <div class="journey-content-panel">
+          <div class="journey-year-badge" id="journeyYear">2016</div>
+          <span id="journeyTag">Beginning</span>
+          <h3 id="journeyTitle">Started Public Service Journey</h3>
+          <p id="journeyText">Started working closely with local youth, citizens, and community groups with a focus on social awareness, public support, and disciplined service.</p>
+          <div class="journey-actions">
+            <a href="about.html" data-i18n="cta.readMore">Read More</a>
+            <a href="gallery.html" data-i18n="cta.gallery">View Gallery</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding about-journey-section">
+    <div class="container">
+      <div class="about-journey-layout">
+        <div class="about-journey-copy reveal">
+          <span class="eyebrow">Journey</span>
+          <h2>From local engagement to organized youth leadership.</h2>
+          <p class="lead-muted">The work continues through direct interaction with citizens, volunteer teams, and young workers who want to contribute to society with discipline and responsibility.</p>
+          <div class="about-timeline">
+            <div><strong>Grassroots Connect</strong><span>Regular public interaction and ward-level coordination.</span></div>
+            <div><strong>Service Programs</strong><span>Community help, awareness drives, and support for needy families.</span></div>
+            <div><strong>Youth Leadership</strong><span>Encouraging young citizens to lead with duty and purpose.</span></div>
+          </div>
+        </div>
+        <div class="about-journey-gallery reveal">
+          <img src="assets/images/abhik-04.jpg" alt="Grassroots meeting">
+          <img src="assets/images/abhik-05.jpg" alt="Youth public program">
+          <img src="assets/images/abhik-06.jpg" alt="Community activity">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer"><div class="container"><div class="row g-4"><div class="col-lg-5"><div class="footer-brand-card"><img src="assets/images/yobo-logo.jpg" alt="Abhik Kumar Mondal logo"><div><h5>Abhik Kumar Mondal</h5><p>Yuva Morcha President, Asansol</p></div></div><p class="footer-about">Committed to youth empowerment, public service, social awareness, and grassroots organization for a stronger Asansol.</p><div class="social-icons"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div><div class="col-lg-3"><h5>Quick Links</h5><div class="footer-links"><a href="about.html">About</a><a href="vision.html">Vision & Mission</a><a href="social-work.html">Social Work</a><a href="contact.html">Contact</a></div></div><div class="col-lg-4"><h5>Contact</h5><div class="footer-contact-list"><div><i class="fa-solid fa-location-dot"></i><span>Asansol, West Bengal, India</span></div><div><i class="fa-solid fa-envelope"></i><span>abhikmondalbjp@gmail.com</span></div></div></div></div><div class="copyright text-center">Copyright &copy; 2026 Abhik Kumar Mondal. All Rights Reserved.</div></div></footer>
+  <nav class="mobile-bottom-tabs" aria-label="Mobile quick navigation"><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a><a href="social-work.html"><i class="fa-solid fa-hand-holding-heart"></i><span>Social Work</span></a><a href="gallery.html"><i class="fa-solid fa-images"></i><span>Gallery</span></a><a href="news.html"><i class="fa-solid fa-newspaper"></i><span>Press</span></a></nav>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
+

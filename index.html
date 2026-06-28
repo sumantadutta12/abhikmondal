@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -28,29 +28,36 @@
           <span class="brand-role">Yuva Morcha President, Asansol</span>
         </span>
       </a>
+      <div class="language-switcher ms-lg-3">
+  <label class="visually-hidden" for="languageSelect">Select Language</label>
+  <select id="languageSelect" class="language-native" aria-label="Select Language" tabindex="-1">
+    <option value="en">English</option>
+    <option value="bn">Bangla</option>
+    <option value="hi">Hindi</option>
+  </select>
+  <button class="language-current" type="button" aria-haspopup="listbox" aria-expanded="false">
+    <i class="fa-solid fa-globe"></i>
+    <span>English</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+  <div class="language-options" role="listbox" aria-label="Select Language">
+    <button type="button" class="language-option active" data-lang="en" role="option" aria-selected="true">English</button>
+    <button type="button" class="language-option" data-lang="bn" role="option" aria-selected="false">Bangla</button>
+    <button type="button" class="language-option" data-lang="hi" role="option" aria-selected="false">Hindi</button>
+  </div>
+      </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNavbar">
         <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="nav.home">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="index.html" data-i18n="nav.home">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html" data-i18n="nav.about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="vision.html" data-i18n="nav.vision">Vision</a></li>
           <li class="nav-item"><a class="nav-link" href="social-work.html" data-i18n="nav.social">Social Work</a></li>
           <li class="nav-item"><a class="nav-link" href="gallery.html" data-i18n="nav.gallery">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="events.html" data-i18n="nav.events">Events</a></li>
-          <li class="nav-item"><a class="nav-link" href="news.html" data-i18n="nav.news">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="news.html" data-i18n="nav.news">Press</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="nav.contact">Contact</a></li>
         </ul>
-        <div class="language-switcher ms-lg-3">
-          <label class="visually-hidden" for="languageSelect">Select Language</label>
-          <i class="fa-solid fa-globe"></i>
-          <select id="languageSelect" aria-label="Select Language">
-            <option value="en">English</option>
-            <option value="bn">বাংলা</option>
-            <option value="hi">हिन्दी</option>
-          </select>
-        </div>
       </div>
     </div>
   </nav>
@@ -303,111 +310,6 @@
     </div>
   </section>
 
-  <section class="section-padding press-section">
-    <div class="container">
-      <div class="section-title reveal">
-        <span class="eyebrow">Press</span>
-        <h2>Press Coverage & Public Updates</h2>
-        <p>Selected media highlights, public announcements, and important updates from social work, youth programs, and grassroots activities.</p>
-      </div>
-      <div class="press-board">
-        <div class="press-grid press-slider">
-          <article class="press-news-card reveal">
-            <div class="press-paper-preview">
-              <div class="press-paper-head"><strong>Asansol Bulletin</strong><span>Public Desk</span></div>
-              <div class="press-paper-title">Youth service activity draws strong public response</div>
-              <img src="assets/images/abhik-01.jpg" alt="Press coverage preview">
-            </div>
-            <h3>Youth service activity draws strong public response in Asansol</h3>
-            <p class="press-excerpt">Local youth and citizens joined the initiative with strong participation and disciplined public support.</p>
-            <div class="press-card-foot"><span>Jun 04, 2026</span><i class="fa-solid fa-share-nodes"></i></div>
-          </article>
-          <article class="press-news-card reveal">
-            <div class="press-paper-preview">
-              <div class="press-paper-head"><strong>People Times</strong><span>City News</span></div>
-              <div class="press-paper-title">Leadership team meets volunteers for outreach work</div>
-              <img src="assets/images/abhik-02.jpg" alt="Press coverage preview">
-            </div>
-            <h3>Leadership team meets volunteers for stronger outreach work</h3>
-            <p class="press-excerpt">Volunteer coordination, ward-level activity planning, and people-focused outreach were discussed.</p>
-            <div class="press-card-foot"><span>May 31, 2026</span><i class="fa-solid fa-share-nodes"></i></div>
-          </article>
-          <article class="press-news-card reveal">
-            <div class="press-paper-preview">
-              <div class="press-paper-head"><strong>Public Post</strong><span>Update</span></div>
-              <div class="press-paper-title">Community programs focus on youth and civic duties</div>
-              <img src="assets/images/abhik-03.jpg" alt="Press coverage preview">
-            </div>
-            <h3>Community programs focus on youth and civic duties</h3>
-            <p class="press-excerpt">The program encouraged awareness, social responsibility, and stronger youth involvement.</p>
-            <div class="press-card-foot"><span>May 30, 2026</span><i class="fa-solid fa-share-nodes"></i></div>
-          </article>
-          <article class="press-news-card reveal">
-            <div class="press-paper-preview">
-              <div class="press-paper-head"><strong>Local Herald</strong><span>Report</span></div>
-              <div class="press-paper-title">Grassroots communication strengthened through meetings</div>
-              <img src="assets/images/abhik-04.jpg" alt="Press coverage preview">
-            </div>
-            <h3>Grassroots communication strengthened through regular meetings</h3>
-            <p class="press-excerpt">Regular meetings helped teams identify local issues and respond with practical coordination.</p>
-            <div class="press-card-foot"><span>May 29, 2026</span><i class="fa-solid fa-share-nodes"></i></div>
-          </article>
-          <article class="press-news-card reveal">
-            <div class="press-paper-preview">
-              <div class="press-paper-head"><strong>State Watch</strong><span>Coverage</span></div>
-              <div class="press-paper-title">Public service and organization work continues</div>
-              <img src="assets/images/abhik-05.jpg" alt="Press coverage preview">
-            </div>
-            <h3>Public service and organization work continues across Asansol</h3>
-            <p class="press-excerpt">Service activities continue with a focus on awareness, discipline, and direct public connect.</p>
-            <div class="press-card-foot"><span>May 29, 2026</span><i class="fa-solid fa-share-nodes"></i></div>
-          </article>
-          <article class="press-news-card reveal">
-            <div class="press-paper-preview">
-              <div class="press-paper-head"><strong>The Civic Line</strong><span>News</span></div>
-              <div class="press-paper-title">Youth participation remains central to public work</div>
-              <img src="assets/images/abhik-06.jpg" alt="Press coverage preview">
-            </div>
-            <h3>Youth participation remains central to public service work</h3>
-            <p class="press-excerpt">Young volunteers remain central to social work, organization building, and community campaigns.</p>
-            <div class="press-card-foot"><span>May 28, 2026</span><i class="fa-solid fa-share-nodes"></i></div>
-          </article>
-        </div>
-        <aside class="popular-press reveal">
-          <h3>Popular Press</h3>
-          <article>
-            <img src="assets/images/abhik-01.jpg" alt="Popular press thumbnail">
-            <div>
-              <h4>Public support programs continue across local areas...</h4>
-              <span>Feb 06, 2026 <i class="fa-solid fa-share-nodes"></i></span>
-            </div>
-          </article>
-          <article>
-            <img src="assets/images/abhik-02.jpg" alt="Popular press thumbnail">
-            <div>
-              <h4>Youth connect activity receives strong local response...</h4>
-              <span>May 10, 2026 <i class="fa-solid fa-share-nodes"></i></span>
-            </div>
-          </article>
-          <article>
-            <img src="assets/images/abhik-03.jpg" alt="Popular press thumbnail">
-            <div>
-              <h4>Organization work reaches grassroots level in Asansol...</h4>
-              <span>Mar 02, 2026 <i class="fa-solid fa-share-nodes"></i></span>
-            </div>
-          </article>
-          <article>
-            <img src="assets/images/abhik-04.jpg" alt="Popular press thumbnail">
-            <div>
-              <h4>Service activities highlight people-first public work...</h4>
-              <span>Mar 04, 2026 <i class="fa-solid fa-share-nodes"></i></span>
-            </div>
-          </article>
-        </aside>
-      </div>
-    </div>
-  </section>
-
   <section class="section-padding gallery-preview-section">
     <div class="container">
       <div class="section-title reveal">
@@ -425,6 +327,65 @@
         <div class="col-md-4 reveal"><a class="gallery-item" href="assets/images/banner-2.jpg" data-fancybox="home-gallery" data-caption="Community outreach program"><img src="assets/images/banner-2.jpg" alt="Community outreach program"><span>Community Outreach</span></a></div>
       </div>
       <div class="text-center mt-4 reveal"><a class="btn btn-premium" href="gallery.html" data-i18n="gallery.cta">Open Gallery</a></div>
+    </div>
+  </section>
+
+  <section class="section-padding facebook-updates-section">
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="eyebrow">Social Updates</span>
+        <h2>Latest Social Updates</h2>
+        <p>Follow public updates from Facebook, Instagram, and X in one place.</p>
+      </div>
+      <div class="social-updates-grid reveal">
+        <article class="social-update-card facebook-update-card">
+          <div class="social-update-head">
+            <span><i class="fa-brands fa-facebook-f"></i> Facebook</span>
+            <a href="https://www.facebook.com/prince.abhik.58" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+          <div class="facebook-plugin-wrap">
+            <div class="fb-page" data-href="https://www.facebook.com/prince.abhik.58" data-tabs="timeline" data-width="380" data-height="620" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+              <blockquote cite="https://www.facebook.com/prince.abhik.58" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/prince.abhik.58">Abhik Kumar Mondal</a></blockquote>
+            </div>
+          </div>
+        </article>
+
+        <article class="social-update-card instagram-update-card">
+          <div class="social-update-head">
+            <span><i class="fa-brands fa-instagram"></i> Instagram</span>
+            <a href="#" aria-label="Open Instagram"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+          <div class="social-post-preview">
+            <img src="assets/images/abhik-04.jpg" alt="Instagram update preview">
+            <div class="social-post-body">
+              <div class="social-post-author">
+                <img src="assets/images/logo-111.webp" alt="">
+                <div><strong>Abhik Kumar Mondal</strong><span>Public activity update</span></div>
+              </div>
+              <p>Ground-level youth connect, public service moments, and organization updates from Asansol.</p>
+              <div class="social-post-actions"><i class="fa-regular fa-heart"></i><i class="fa-regular fa-comment"></i><i class="fa-regular fa-paper-plane"></i></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="social-update-card x-update-card">
+          <div class="social-update-head">
+            <span><i class="fa-brands fa-x-twitter"></i> X</span>
+            <a href="#" aria-label="Open X"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+          <div class="social-post-preview">
+            <img src="assets/images/abhik-05.jpg" alt="X post preview">
+            <div class="social-post-body">
+              <div class="social-post-author">
+                <img src="assets/images/yobo-logo.jpg" alt="">
+                <div><strong>Abhik Kumar Mondal</strong><span>@publicupdates</span></div>
+              </div>
+              <p>Youth leadership, public service, civic awareness, and organization work updates for Asansol.</p>
+              <div class="social-post-actions"><i class="fa-regular fa-comment"></i><i class="fa-solid fa-retweet"></i><i class="fa-regular fa-heart"></i></div>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -451,7 +412,7 @@
           <h5>Contact</h5>
           <div class="footer-contact-list">
             <div><i class="fa-solid fa-location-dot"></i><span>Asansol, West Bengal, India</span></div>
-            <div><i class="fa-solid fa-phone"></i><span>+91 90000 00000</span></div>
+            
             <div><i class="fa-solid fa-envelope"></i><span>abhikmondalbjp@gmail.com</span></div>
           </div>
         </div>
@@ -464,9 +425,11 @@
     <a href="index.html" class="active"><i class="fa-solid fa-house"></i><span>Home</span></a>
     <a href="social-work.html"><i class="fa-solid fa-hand-holding-heart"></i><span>Social Work</span></a>
     <a href="gallery.html"><i class="fa-solid fa-images"></i><span>Gallery</span></a>
-    <a href="news.html"><i class="fa-solid fa-newspaper"></i><span>News</span></a>
+    <a href="news.html"><i class="fa-solid fa-newspaper"></i><span>Press</span></a>
   </nav>
 
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v23.0"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -474,3 +437,6 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
+
