@@ -13,6 +13,18 @@
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
+  <div class="site-loader" role="status" aria-live="polite" aria-label="Loading page">
+    <div class="loader-emblem" aria-hidden="true">
+      <span class="loader-logo loader-logo-main">
+        <img src="assets/images/logo-111.webp" alt="">
+      </span>
+      <span class="loader-logo loader-logo-yuva">
+        <img src="assets/images/yobo-logo.jpg" alt="">
+      </span>
+    </div>
+    <span class="loader-text">Loading</span>
+  </div>
+
   <nav class="navbar navbar-expand-lg fixed-top site-navbar">
     <div class="container">
       <a class="navbar-brand brand-switch d-flex align-items-center gap-2" href="index.html">
@@ -61,12 +73,7 @@
 
   <header class="page-hero premium-page-hero contact-page-hero">
     <div class="container">
-      <nav class="premium-breadcrumb reveal" aria-label="Breadcrumb">
-        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-        <span><i class="fa-solid fa-chevron-right"></i></span>
-        <strong>Contact</strong>
-      </nav>
-      <span class="eyebrow reveal">Contact</span>
+   
       <h1 class="mt-3 reveal">Connect With The Team</h1>
       <p class="reveal">For public support, social work coordination, youth programs, and community initiatives in Asansol.</p>
     </div>
@@ -117,6 +124,56 @@
               <span>Asansol, West Bengal</span>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding sos-section">
+    <div class="container">
+      <div class="sos-panel reveal" data-team-email="abhikmondalbjp@gmail.com" data-team-phone="+919382408687">
+        <div class="sos-content">
+          <span class="eyebrow">Emergency Help</span>
+          <h2>Women Safety Panic Support</h2>
+          <p>If you or someone nearby is in immediate danger, call emergency services first. This tool can prepare a help message with your location for quick sharing.</p>
+          <div class="sos-primary-actions">
+            <a class="btn sos-call-btn" href="tel:112">
+              <i class="fa-solid fa-phone-volume"></i>
+              Call 112
+            </a>
+            <a class="btn sos-outline-btn" href="tel:1091">
+              <i class="fa-solid fa-shield-heart"></i>
+              Women Helpline
+            </a>
+          </div>
+        </div>
+
+        <div class="sos-tool" aria-live="polite">
+          <button class="sos-panic-button" id="sosPanicButton" type="button">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Prepare SOS</span>
+          </button>
+          <p id="sosStatus">Tap once to prepare emergency message and location.</p>
+          <textarea id="sosMessage" class="form-control" rows="6" readonly placeholder="SOS message will appear here."></textarea>
+          <div class="sos-action-grid">
+            <a class="sos-action" id="sosTeamEmail" href="mailto:abhikmondalbjp@gmail.com">
+              <i class="fa-solid fa-envelope"></i>
+              Message Team
+            </a>
+            <a class="sos-action" id="sosTeamCall" href="#" aria-disabled="true">
+              <i class="fa-solid fa-headset"></i>
+              Call Team
+            </a>
+            <a class="sos-action" id="sosTeamSms" href="#" aria-disabled="true">
+              <i class="fa-solid fa-message"></i>
+              SMS Team
+            </a>
+            <button class="sos-action" id="sosCopyMessage" type="button">
+              <i class="fa-solid fa-copy"></i>
+              Copy SOS
+            </button>
+          </div>
+          <small>Website messages need user confirmation. For urgent danger, call 112 directly.</small>
         </div>
       </div>
     </div>

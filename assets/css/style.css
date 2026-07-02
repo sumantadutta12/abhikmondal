@@ -32,6 +32,10 @@ body {
   overflow-x: hidden;
 }
 
+body.loader-active {
+  overflow: hidden;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -40,6 +44,140 @@ a {
 img {
   max-width: 100%;
   display: block;
+}
+
+.site-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 0.9rem;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 143, 0, 0.16), transparent 28%),
+    linear-gradient(135deg, #fffaf0 0%, #ffffff 46%, #eef8f2 100%);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+
+.site-loader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-emblem {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid rgba(255, 143, 0, 0.28);
+  box-shadow: 0 18px 42px rgba(7, 31, 61, 0.14);
+}
+
+.loader-emblem::before,
+.loader-emblem::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border-radius: inherit;
+  border: 3px solid transparent;
+  border-top-color: var(--saffron);
+  border-right-color: var(--green);
+  animation: loaderSpin 1.35s linear infinite;
+}
+
+.loader-emblem::after {
+  inset: -14px;
+  border-top-color: rgba(7, 31, 61, 0.18);
+  border-right-color: rgba(255, 143, 0, 0.34);
+  animation-duration: 2s;
+  animation-direction: reverse;
+}
+
+.loader-logo {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffffff;
+  overflow: hidden;
+  padding: 8px;
+}
+
+.loader-logo-main {
+  width: 58px;
+  height: 58px;
+  animation: loaderLogoMain 2.6s ease-in-out infinite;
+}
+
+.loader-logo-yuva {
+  width: 70px;
+  height: 70px;
+  padding: 4px;
+  animation: loaderLogoYuva 2.6s ease-in-out infinite;
+}
+
+.loader-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.loader-text {
+  color: var(--navy);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+@keyframes loaderSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loaderLogoMain {
+  0%,
+  42% {
+    opacity: 1;
+    filter: drop-shadow(0 0 0 rgba(255, 143, 0, 0));
+    transform: scale(1);
+  }
+  22% {
+    filter: drop-shadow(0 0 12px rgba(255, 143, 0, 0.52));
+  }
+  50%,
+  100% {
+    opacity: 0;
+    filter: drop-shadow(0 0 0 rgba(255, 143, 0, 0));
+    transform: scale(0.94);
+  }
+}
+
+@keyframes loaderLogoYuva {
+  0%,
+  42% {
+    opacity: 0;
+    filter: drop-shadow(0 0 0 rgba(19, 138, 67, 0));
+    transform: scale(0.94);
+  }
+  50%,
+  100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 0 rgba(19, 138, 67, 0));
+    transform: scale(1);
+  }
+  72% {
+    filter: drop-shadow(0 0 12px rgba(19, 138, 67, 0.5));
+  }
 }
 .site-navbar {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 250, 240, 0.94));
@@ -2135,6 +2273,240 @@ a.contact-detail-card:hover {
   color: var(--muted);
   font-size: 0.88rem;
 }
+
+.sos-section {
+  background:
+    linear-gradient(135deg, rgba(143, 21, 21, 0.1), transparent 32%),
+    linear-gradient(315deg, rgba(215, 168, 75, 0.12), transparent 34%),
+    #fbfcff;
+}
+
+.home-sos-section {
+  padding-top: 3.5rem;
+  padding-bottom: 4.5rem;
+}
+
+.sos-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(340px, 0.64fr);
+  gap: clamp(1rem, 2.5vw, 1.6rem);
+  align-items: stretch;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(1rem, 2.4vw, 1.55rem);
+  border: 1px solid rgba(143, 21, 21, 0.12);
+  border-radius: 22px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 250, 240, 0.94)),
+    #ffffff;
+  box-shadow: 0 18px 46px rgba(7, 31, 61, 0.11);
+  position: relative;
+  overflow: hidden;
+}
+
+.sos-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(90deg, #c51616, var(--gold), var(--green));
+}
+
+.sos-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.sos-content h2 {
+  color: #8f1515;
+  font-family: var(--font-heading);
+  font-size: clamp(1.55rem, 2.7vw, 2.35rem);
+  font-weight: 900;
+  margin: 0.42rem 0 0.65rem;
+}
+
+.sos-content p {
+  max-width: 620px;
+  color: var(--ink);
+  font-size: 0.96rem;
+  line-height: 1.62;
+  margin-bottom: 1rem;
+}
+
+.sos-primary-actions,
+.sos-action-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.sos-call-btn,
+.sos-outline-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 42px;
+  border-radius: 999px;
+  font-weight: 850;
+  padding: 0.66rem 1rem;
+  font-size: 0.9rem;
+}
+
+.sos-call-btn {
+  color: #ffffff;
+  background: linear-gradient(135deg, #c51616, #7f1010);
+  box-shadow: 0 16px 34px rgba(197, 22, 22, 0.26);
+}
+
+.sos-call-btn:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.sos-outline-btn {
+  color: #8f1515;
+  border: 1px solid rgba(143, 21, 21, 0.28);
+  background: rgba(191, 22, 22, 0.06);
+}
+
+.sos-outline-btn:hover {
+  color: #ffffff;
+  background: #8f1515;
+}
+
+.sos-tool {
+  display: grid;
+  gap: 0.68rem;
+  padding: clamp(0.85rem, 2vw, 1.05rem);
+  border: 1px solid rgba(7, 31, 61, 0.08);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, #ffffff, #f8fafc);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  position: relative;
+  z-index: 1;
+}
+
+.sos-panic-button {
+  display: grid;
+  place-items: center;
+  gap: 0.35rem;
+  width: 108px;
+  height: 108px;
+  margin: 0 auto;
+  color: #ffffff;
+  border: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.28), transparent 32%),
+    linear-gradient(145deg, #df1f1f, #8f1515);
+  box-shadow: 0 14px 34px rgba(191, 22, 22, 0.3);
+}
+
+.sos-panic-button i {
+  font-size: 1.75rem;
+}
+
+.sos-panic-button span {
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+}
+
+.sos-panic-button:hover {
+  transform: translateY(-2px);
+}
+
+#sosStatus {
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+#sosMessage {
+  resize: vertical;
+  min-height: 96px;
+  max-height: 130px;
+  padding: 0.75rem 0.85rem;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  line-height: 1.48;
+}
+
+.sos-action-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sos-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 40px;
+  color: var(--navy);
+  border: 1px solid rgba(7, 31, 61, 0.1);
+  border-radius: 12px;
+  background: #ffffff;
+  font-size: 0.84rem;
+  font-weight: 850;
+  padding: 0.58rem 0.7rem;
+}
+
+.sos-action:hover {
+  color: #ffffff;
+  background: var(--navy);
+}
+
+.sos-action[aria-disabled="true"] {
+  color: var(--muted);
+  cursor: not-allowed;
+  opacity: 0.64;
+}
+
+.sos-tool small {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.sos-advice {
+  border: 1px solid rgba(7, 31, 61, 0.08);
+  border-radius: 14px;
+  background: #ffffff;
+  padding: 0.78rem;
+}
+
+.sos-advice strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--navy);
+  font-size: 0.86rem;
+  font-weight: 900;
+  margin-bottom: 0.45rem;
+}
+
+.sos-advice ul {
+  display: grid;
+  gap: 0.32rem;
+  padding-left: 1.15rem;
+  margin: 0;
+}
+
+.sos-advice li {
+  color: var(--ink);
+  font-size: 0.84rem;
+  line-height: 1.42;
+}
+
+
 
 .press-hero-actions {
   display: flex;
@@ -4523,6 +4895,10 @@ a.contact-detail-card:hover {
     grid-template-columns: 1fr;
   }
 
+  .sos-panel {
+    grid-template-columns: 1fr;
+  }
+
   .contact-visual-panel {
     min-height: auto;
   }
@@ -4852,6 +5228,20 @@ a.contact-detail-card:hover {
     height: 46px;
     flex-basis: 46px;
     border-radius: 15px;
+  }
+
+  .sos-panel,
+  .sos-tool {
+    border-radius: 22px;
+  }
+
+  .sos-action-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sos-panic-button {
+    width: 104px;
+    height: 104px;
   }
 
   .contact-visual-panel {

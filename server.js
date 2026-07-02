@@ -48,7 +48,7 @@ const mimeTypes = {
 function sendJson(response, statusCode, payload) {
   response.writeHead(statusCode, {
     "Content-Type": "application/json; charset=utf-8",
-    "Cache-Control": "public, max-age=180"
+    "Cache-Control": statusCode === 200 ? "public, max-age=180" : "no-store"
   });
   response.end(JSON.stringify(payload));
 }

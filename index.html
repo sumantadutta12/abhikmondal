@@ -16,6 +16,18 @@
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body class="home-page">
+  <div class="site-loader" role="status" aria-live="polite" aria-label="Loading page">
+    <div class="loader-emblem" aria-hidden="true">
+      <span class="loader-logo loader-logo-main">
+        <img src="assets/images/logo-111.webp" alt="">
+      </span>
+      <span class="loader-logo loader-logo-yuva">
+        <img src="assets/images/yobo-logo.jpg" alt="">
+      </span>
+    </div>
+    <span class="loader-text">Loading</span>
+  </div>
+
   <nav class="navbar navbar-expand-lg fixed-top site-navbar">
     <div class="container">
       <a class="navbar-brand brand-switch d-flex align-items-center gap-2" href="index.html">
@@ -152,6 +164,68 @@
     </div>
   </header>
 
+
+  <section class="section-padding sos-section home-sos-section">
+    <div class="container">
+      <div class="sos-panel reveal" data-team-email="abhikmondalbjp@gmail.com" data-team-phone="+919382408687">
+        <div class="sos-content">
+          <span class="eyebrow">AI Women Safety Assistant</span>
+          <h2>AI নারী সুরক্ষা সহায়তা</h2>
+          <p>কোনো নারী বা মেয়ে বিপদে পড়লে দ্রুত জরুরি নম্বরে যোগাযোগ, লোকেশনসহ SOS মেসেজ প্রস্তুত, WhatsApp/টিম মেসেজ এবং প্রাথমিক নিরাপত্তা পরামর্শ এক জায়গা থেকে পাওয়া যাবে।</p>
+          <div class="sos-primary-actions">
+            <a class="btn sos-call-btn" href="tel:112">
+              <i class="fa-solid fa-phone-volume"></i>
+              Call 112
+            </a>
+            <a class="btn sos-outline-btn" href="tel:1091">
+              <i class="fa-solid fa-shield-heart"></i>
+              Women Helpline
+            </a>
+          </div>
+        </div>
+
+        <div class="sos-tool" aria-live="polite">
+          <button class="sos-panic-button" id="sosPanicButton" type="button">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>SOS</span>
+          </button>
+          <p id="sosStatus">SOS চাপলে লোকেশনসহ সাহায্যের মেসেজ প্রস্তুত হবে।</p>
+          <textarea id="sosMessage" class="form-control" rows="3" readonly placeholder="SOS message will appear here."></textarea>
+          <div class="sos-action-grid">
+            <a class="sos-action" id="sosTeamEmail" href="mailto:abhikmondalbjp@gmail.com">
+              <i class="fa-solid fa-envelope"></i>
+              Message Team
+            </a>
+            <a class="sos-action" id="sosTeamCall" href="#" aria-disabled="true">
+              <i class="fa-solid fa-headset"></i>
+              Call Team
+            </a>
+            <a class="sos-action" id="sosTeamSms" href="#" aria-disabled="true">
+              <i class="fa-solid fa-message"></i>
+              SMS Team
+            </a>
+            <a class="sos-action" id="sosTeamWhatsApp" href="#" aria-disabled="true">
+              <i class="fa-brands fa-whatsapp"></i>
+              WhatsApp
+            </a>
+            <button class="sos-action" id="sosCopyMessage" type="button">
+              <i class="fa-solid fa-copy"></i>
+              Copy SOS
+            </button>
+          </div>
+          <div class="sos-advice">
+            <strong><i class="fa-solid fa-robot"></i> AI Safety Advice</strong>
+            <ul>
+              <li>নিরাপদ ও আলোযুক্ত জায়গায় যাওয়ার চেষ্টা করুন।</li>
+              <li>112 বা 1091-এ কল করুন এবং লোকেশন শেয়ার করুন।</li>
+              <li>বিশ্বাসযোগ্য মানুষ বা পরিবারের কাউকে দ্রুত জানান।</li>
+            </ul>
+          </div>
+          <small>Emergency হলে প্রথমে 112-এ কল করুন। Website থেকে message/call পাঠাতে user confirmation লাগবে।</small>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
   <section class="section-padding band about-premium-section">

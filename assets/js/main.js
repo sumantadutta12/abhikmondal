@@ -3,6 +3,17 @@
 
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
   const brandSwitch = $(".brand-switch");
+  const siteLoader = $(".site-loader");
+
+  if (siteLoader.length) {
+    $("body").addClass("loader-active");
+    $(window).on("load", function () {
+      setTimeout(function () {
+        siteLoader.addClass("is-hidden");
+        $("body").removeClass("loader-active");
+      }, 450);
+    });
+  }
 
   if (brandSwitch.length) {
     setInterval(function () {
@@ -895,5 +906,104 @@
       .addClass("alert-success")
       .text("Thank you. Your message has been prepared for the team.");
     this.reset();
+  });
+
+  const sosPanel = $(".sos-panel");
+  const sosMessage = $("#sosMessage");
+  const sosStatus = $("#sosStatus");
+  const sosTeamEmail = $("#sosTeamEmail");
+  const sosTeamCall = $("#sosTeamCall");
+  const sosTeamSms = $("#sosTeamSms");
+  const sosTeamWhatsApp = $("#sosTeamWhatsApp");
+  const teamEmail = sosPanel.data("team-email") || "abhikmondalbjp@gmail.com";
+  const teamPhone = String(sosPanel.data("team-phone") || "").replace(/[^\d+]/g, "");
+  const whatsappPhone = teamPhone.replace(/^\+/, "");
+
+  function setSosTeamLinks(message) {
+    const encodedSubject = encodeURIComponent("Emergency Help Request");
+    const encodedMessage = encodeURIComponent(message);
+    sosTeamEmail.attr("href", `mailto:${teamEmail}?subject=${encodedSubject}&body=${encodedMessage}`);
+
+    if (teamPhone) {
+      sosTeamCall.attr("href", `tel:${teamPhone}`).attr("aria-disabled", "false");
+      sosTeamSms.attr("href", `sms:${teamPhone}?body=${encodedMessage}`).attr("aria-disabled", "false");
+      sosTeamWhatsApp
+        .attr("href", `https://wa.me/${whatsappPhone}?text=${encodedMessage}`)
+        .attr("target", "_blank")
+        .attr("rel", "noopener")
+        .attr("aria-disabled", "false");
+    }
+  }
+
+  function buildSosMessage(position) {
+    const locationLine = position
+      ? `Location: https://www.google.com/maps?q=${position.coords.latitude},${position.coords.longitude}`
+      : "Location: Not shared";
+    return [
+      "SOS: Emergency help needed.",
+      "A woman/girl may be in danger and needs immediate support.",
+      locationLine,
+      "Please contact back and coordinate help urgently.",
+      "If this is life-threatening, emergency services should be contacted first."
+    ].join("\n");
+  }
+
+  if (sosPanel.length) {
+    setSosTeamLinks(buildSosMessage(null));
+  }
+
+  $("#sosPanicButton").on("click", function () {
+    if (!sosPanel.length) {
+      return;
+    }
+
+    sosStatus.text("Preparing SOS message...");
+    const fallbackMessage = buildSosMessage(null);
+    sosMessage.val(fallbackMessage);
+    setSosTeamLinks(fallbackMessage);
+
+    if (!navigator.geolocation) {
+      sosStatus.text("Location not supported. SOS message is ready.");
+      return;
+    }
+
+    sosStatus.text("Allow location to include map link.");
+    navigator.geolocation.getCurrentPosition(
+      function (position) {
+        const message = buildSosMessage(position);
+        sosMessage.val(message);
+        setSosTeamLinks(message);
+        sosStatus.text("SOS message ready with location.");
+      },
+      function () {
+        sosStatus.text("Location not allowed. SOS message is ready.");
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 9000,
+        maximumAge: 0
+      }
+    );
+  });
+
+  $(".sos-action").on("click", function (event) {
+    if ($(this).attr("aria-disabled") === "true") {
+      event.preventDefault();
+      sosStatus.text("Prepare SOS first or configure team phone number.");
+    }
+  });
+
+  $("#sosCopyMessage").on("click", async function () {
+    const text = sosMessage.val().trim() || buildSosMessage(null);
+    sosMessage.val(text);
+    setSosTeamLinks(text);
+
+    try {
+      await navigator.clipboard.writeText(text);
+      sosStatus.text("SOS message copied.");
+    } catch (error) {
+      sosMessage.trigger("select");
+      sosStatus.text("Select and copy the SOS message.");
+    }
   });
 })(jQuery);
