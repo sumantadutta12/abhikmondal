@@ -918,6 +918,7 @@
   const teamEmail = sosPanel.data("team-email") || "abhikmondalbjp@gmail.com";
   const teamPhone = String(sosPanel.data("team-phone") || "").replace(/[^\d+]/g, "");
   const whatsappPhone = teamPhone.replace(/^\+/, "");
+  let sosLocationWatchId = null;
 
   function setSosTeamLinks(message) {
     const encodedSubject = encodeURIComponent("Emergency Help Request");
@@ -937,19 +938,32 @@
 
   function buildSosMessage(position) {
     const locationLine = position
-      ? `Location: https://www.google.com/maps?q=${position.coords.latitude},${position.coords.longitude}`
-      : "Location: Not shared";
+      ? `Live Location: https://www.google.com/maps?q=${position.coords.latitude.toFixed(6)},${position.coords.longitude.toFixed(6)}`
+      : "Live Location: Not shared yet";
+    const accuracyLine = position && position.coords.accuracy
+      ? `Accuracy: about ${Math.round(position.coords.accuracy)} meters`
+      : "";
+    const updatedLine = `Updated: ${new Date().toLocaleString()}`;
     return [
       "SOS: Emergency help needed.",
       "A woman/girl may be in danger and needs immediate support.",
       locationLine,
+      accuracyLine,
+      updatedLine,
       "Please contact back and coordinate help urgently.",
       "If this is life-threatening, emergency services should be contacted first."
-    ].join("\n");
+    ].filter(Boolean).join("\n");
+  }
+
+  function updateSosShareMessage(position, statusText) {
+    const message = buildSosMessage(position);
+    sosMessage.val(message);
+    setSosTeamLinks(message);
+    sosStatus.text(statusText);
   }
 
   if (sosPanel.length) {
-    setSosTeamLinks(buildSosMessage(null));
+    updateSosShareMessage(null, sosStatus.text() || "SOS message ready.");
   }
 
   $("#sosPanicButton").on("click", function () {
@@ -957,30 +971,70 @@
       return;
     }
 
-    sosStatus.text("Preparing SOS message...");
-    const fallbackMessage = buildSosMessage(null);
-    sosMessage.val(fallbackMessage);
-    setSosTeamLinks(fallbackMessage);
+    updateSosShareMessage(null, "Preparing SOS message...");
 
     if (!navigator.geolocation) {
       sosStatus.text("Location not supported. SOS message is ready.");
       return;
     }
 
-    sosStatus.text("Allow location to include map link.");
+    if (window.isSecureContext === false) {
+      sosStatus.text("Location needs HTTPS. Open the live HTTPS website, then tap SOS again.");
+      return;
+    }
+
+    sosStatus.text("Allow browser location. Then WhatsApp, SMS, and email will include map location.");
     navigator.geolocation.getCurrentPosition(
       function (position) {
-        const message = buildSosMessage(position);
-        sosMessage.val(message);
-        setSosTeamLinks(message);
-        sosStatus.text("SOS message ready with location.");
+        updateSosShareMessage(position, "Location added. Tap WhatsApp, SMS, or Message Team to send.");
+
+        if (navigator.geolocation.watchPosition && sosLocationWatchId === null) {
+          sosLocationWatchId = navigator.geolocation.watchPosition(
+            function (livePosition) {
+              updateSosShareMessage(livePosition, "Latest location updated in WhatsApp, SMS, and email links.");
+            },
+            function (error) {
+              const lastLocationMessage = "Last SOS location is still ready.";
+              if (error.code === error.PERMISSION_DENIED) {
+                sosStatus.text("Location permission was blocked. Enable site location permission and tap SOS again.");
+                return;
+              }
+              if (error.code === error.POSITION_UNAVAILABLE) {
+                sosStatus.text("Location unavailable now. " + lastLocationMessage);
+                return;
+              }
+              if (error.code === error.TIMEOUT) {
+                sosStatus.text("Location update timed out. " + lastLocationMessage);
+                return;
+              }
+              sosStatus.text("Live location stopped. " + lastLocationMessage);
+            },
+            {
+              enableHighAccuracy: true,
+              timeout: 12000,
+              maximumAge: 0
+            }
+          );
+        }
       },
-      function () {
-        sosStatus.text("Location not allowed. SOS message is ready.");
+      function (error) {
+        if (error.code === error.PERMISSION_DENIED) {
+          sosStatus.text("Location permission blocked. Allow this site in browser settings, then tap SOS again.");
+          return;
+        }
+        if (error.code === error.POSITION_UNAVAILABLE) {
+          sosStatus.text("Location unavailable. Move to open network/GPS area and tap SOS again.");
+          return;
+        }
+        if (error.code === error.TIMEOUT) {
+          sosStatus.text("Location timed out. Tap SOS again or send message without location.");
+          return;
+        }
+        sosStatus.text("Location not added. SOS message is ready without location.");
       },
       {
         enableHighAccuracy: true,
-        timeout: 9000,
+        timeout: 15000,
         maximumAge: 0
       }
     );
