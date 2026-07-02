@@ -937,9 +937,18 @@
   }
 
   function buildSosMessage(position) {
-    const locationLine = position
-      ? `Live Location: https://www.google.com/maps?q=${position.coords.latitude.toFixed(6)},${position.coords.longitude.toFixed(6)}`
-      : "Live Location: Not shared yet";
+    if (!position) {
+      return [
+        "SOS: Emergency help needed.",
+        "A woman/girl may be in danger and needs immediate support.",
+        "Live Location: Waiting for location permission.",
+        `Updated: ${new Date().toLocaleString()}`,
+        "Please contact back and coordinate help urgently.",
+        "If this is life-threatening, emergency services should be contacted first."
+      ].join("\n");
+    }
+
+    const locationLine = `Live Location: https://www.google.com/maps?q=${position.coords.latitude.toFixed(6)},${position.coords.longitude.toFixed(6)}`;
     const accuracyLine = position && position.coords.accuracy
       ? `Accuracy: about ${Math.round(position.coords.accuracy)} meters`
       : "";
@@ -963,7 +972,9 @@
   }
 
   if (sosPanel.length) {
-    updateSosShareMessage(null, sosStatus.text() || "SOS message ready.");
+    if (teamPhone) {
+      sosTeamCall.attr("href", `tel:${teamPhone}`).attr("aria-disabled", "false");
+    }
   }
 
   $("#sosPanicButton").on("click", function () {
@@ -971,10 +982,11 @@
       return;
     }
 
-    updateSosShareMessage(null, "Preparing SOS message...");
+    sosMessage.val("");
+    sosStatus.text("Getting live location. Please allow browser location permission.");
 
     if (!navigator.geolocation) {
-      sosStatus.text("Location not supported. SOS message is ready.");
+      updateSosShareMessage(null, "Location not supported. SOS message is ready without live location.");
       return;
     }
 
@@ -1043,7 +1055,7 @@
   $(".sos-action").on("click", function (event) {
     if ($(this).attr("aria-disabled") === "true") {
       event.preventDefault();
-      sosStatus.text("Prepare SOS first or configure team phone number.");
+      sosStatus.text("Tap SOS and allow location first. Then WhatsApp, SMS, and email will include live location.");
     }
   });
 
